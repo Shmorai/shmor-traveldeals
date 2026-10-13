@@ -19,7 +19,8 @@
    "type": "post" page, newest first (posts live in content/blog/*.json and
    need a "date": "YYYY-MM-DD"). Posts get BlogPosting JSON-LD, dates,
    reading time and "sources"; any page can show "latestPosts": 3. Also
-   writes an RSS feed at /<blog slug>/feed.xml. Also writes sitemap.xml, robots.txt,
+   writes an RSS feed at /<blog slug>/feed.xml. A page's "heroHtml" (raw HTML,
+   e.g. a finder form) is placed in the hero under the intro. Also writes sitemap.xml, robots.txt,
    404.html, /search/ (noindex) and search-index.json.
    ===================================================================== */
 const fs = require('fs');
@@ -182,7 +183,7 @@ function hero(p) {
   return `<section class="hero${p.slug ? ' hero-page' : ' hero-home'}${i ? ' has-img' : ''}">${photo}<div class="wrap">
   ${p.eyebrow ? `<p class="eyebrow">${esc(p.eyebrow)}</p>` : ''}
   <h1>${p.h1Html || esc(p.h1)}</h1>
-  ${p.intro ? `<p class="lede">${p.intro}</p>` : ''}
+  ${p.intro ? `<p class="lede">${p.intro}</p>` : ''}${p.heroHtml || ''}
   ${p.type === 'post' ? `<p class="post-byline">By the ${esc(NAME)} editorial team · <time datetime="${p.date}">${fmtDate(p.date)}</time>${p.updated && p.updated !== p.date ? ` · Updated <time datetime="${p.updated}">${fmtDate(p.updated)}</time>` : ''} · ${readMins(p)} min read</p>` : ''}
   ${p.search === false || (p.type === 'post' && p.search !== true) ? '' : searchForm(p.searchPlaceholder)}
   ${p.chips?.length ? `<div class="chips">${p.chips.map(c => `<a href="${c.slug !== undefined ? pagePath(bySlug.get(c.slug) || { slug: c.slug }) : `/search/?q=${encodeURIComponent(c.q)}`}">${esc(c.label)}</a>`).join('')}</div>` : ''}
@@ -248,6 +249,8 @@ const ICONS = {
   truck: ['M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2', 'M15 18H9', 'M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14', 'c:17,18,2', 'c:7,18,2'],
   stethoscope: ['M11 2v2', 'M5 2v2', 'M5 3H4a2 2 0 0 0-2 2v4a6 6 0 0 0 12 0V5a2 2 0 0 0-2-2h-1', 'M8 15a6 6 0 0 0 12 0v-3', 'c:20,10,2'],
   check: ['M20 6 9 17l-5-5'],
+  droplet: ['M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z'],
+  globe: ['c:12,12,10', 'M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20', 'M2 12h20'],
 };
 const icon = name => !ICONS[name] ? '' : `<svg class="ico" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICONS[name].map(d =>
   d.startsWith('c:') ? (([cx, cy, r]) => `<circle cx="${cx}" cy="${cy}" r="${r}"/>`)(d.slice(2).split(',')) : `<path d="${d}"/>`).join('')}</svg>`;
