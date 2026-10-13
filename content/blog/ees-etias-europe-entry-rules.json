@@ -1,0 +1,80 @@
+{
+  "updated": "2026-10-13",
+  "date": "2026-10-13",
+  "slug": "blog/ees-etias-europe-entry-rules",
+  "type": "post",
+  "title": "EES and ETIAS Explained: Europe’s New Entry Rules",
+  "description": "What the EU Entry/Exit System means for UK and US travellers, when ETIAS will start, and what to expect at the border on your next trip to Europe.",
+  "h1": "EES and ETIAS: what Europe’s new border rules mean for your trip",
+  "eyebrow": "Travel news · Entry rules",
+  "intro": "Passport stamps are gone at Europe’s borders. Here is how the new Entry/Exit System works, who it applies to, and the latest on ETIAS.",
+  "image": {
+    "src": "https://images.unsplash.com/photo-1563463149242-bd378d9ab05c",
+    "alt": "Passport control sign at a European airport",
+    "credit": "Daniel Schludi",
+    "creditUrl": "https://unsplash.com/@schluditsch"
+  },
+  "keywords": [
+    "ees",
+    "entry exit system",
+    "etias",
+    "europe entry requirements",
+    "schengen",
+    "passport stamp",
+    "travel to europe from uk",
+    "travel to europe from us",
+    "biometric border checks",
+    "etias launch date"
+  ],
+  "cardText": "Fingerprints and photos replace passport stamps. What changes at the border, and the latest on ETIAS.",
+  "sections": [
+    {
+      "h2": "What is the Entry/Exit System (EES)?",
+      "html": "<p>The Entry/Exit System is the EU’s automated system for recording non-EU travellers on short stays each time they cross an external border of the Schengen area. It started in stages on 12 October 2025 and became <strong>fully operational on 10 April 2026</strong>. Since then, it has replaced the stamping of passports.</p><p>When you are registered, the system records your name and passport details, your <strong>fingerprints and a facial image</strong>, and the date and place of each entry and exit. It then counts your days automatically, so border guards can see if someone has overstayed.</p>"
+    },
+    {
+      "h2": "Who it applies to",
+      "html": "<ul><li><strong>Non-EU nationals on a short stay</strong>, which includes British, American, Canadian and Australian visitors. A short stay means up to 90 days in any 180-day period.</li><li>It does <strong>not</strong> apply to EU citizens, or to non-EU nationals who hold a residence permit for a Schengen country.</li><li>Children under 12 do not have to give fingerprints, but their other details are still recorded.</li></ul><p>EES is used by the countries of the Schengen area: most EU countries plus Iceland, Liechtenstein, Norway and Switzerland. <strong>Ireland and Cyprus do not use it</strong>, so travel there works as before.</p>"
+    },
+    {
+      "h2": "What to expect at the border",
+      "html": "<ul><li><strong>Your first trip takes longest.</strong> You register once, at a self-service kiosk or with a border officer. On later trips the system checks your face or fingerprints against your record.</li><li><strong>Allow extra time</strong>, especially in school holidays and at busy airports and ports.</li><li><strong>Leaving from the UK by train, coach or car?</strong> At Eurostar in London St Pancras, Eurotunnel at Folkestone and the Port of Dover, French border checks, including EES, happen in the UK before you depart.</li><li>Your record is kept for a set period, so you won’t need to fully re-register on every visit.</li></ul>"
+    },
+    {
+      "h2": "ETIAS: the travel authorisation that hasn’t started yet",
+      "html": "<p>ETIAS (the European Travel Information and Authorisation System) is a separate scheme. When it starts, visa-free visitors, including UK and US citizens, will need to apply online for a travel authorisation before visiting most European countries.</p><ul><li><strong>It is not in operation yet.</strong> The EU has said it will announce the start date several months before launch. An earlier target of late 2026 was removed from the official EU site during 2026.</li><li><strong>Planned details:</strong> a fee of €20 (free for under-18s and over-70s), valid for up to three years or until your passport expires.</li><li><strong>No one can apply today.</strong> Any website taking ETIAS applications or payments right now is not official.</li></ul>"
+    },
+    {
+      "h2": "How to prepare for your next trip to Europe",
+      "html": "<ul><li>Check that your passport meets the entry rules for your destination, including its issue date and expiry date.</li><li>Keep track of your days if you travel often. The 90/180-day rule now applies automatically, and overstays are recorded.</li><li>Check official sources for entry rules shortly before you travel, as they can change.</li></ul><p>Planning a break? Compare <a href=\"/city-breaks/\">European city breaks</a> or <a href=\"/package-holidays/\">package holidays</a>.</p>"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Do UK citizens need to register for EES?",
+      "a": "Yes. Since leaving the EU, British passport holders are non-EU nationals, so they are registered in EES when visiting Schengen countries for a short stay. EES does not apply to trips to Ireland or Cyprus."
+    },
+    {
+      "q": "Do I need to do anything before I travel for EES?",
+      "a": "No. There is nothing to apply for or pay. You are registered at the border the first time you cross after EES started."
+    },
+    {
+      "q": "When does ETIAS start?",
+      "a": "There is no confirmed start date. The EU says it will announce the date several months in advance on its official travel-europe.europa.eu website. Until then, no one needs ETIAS to travel."
+    },
+    {
+      "q": "Will ETIAS replace EES?",
+      "a": "No, they work together. EES records when you cross the border. ETIAS will be a pre-travel authorisation that visa-free visitors need before they set off."
+    }
+  ],
+  "sources": [
+    {
+      "title": "European Commission: Entry/Exit System (EES)",
+      "url": "https://home-affairs.ec.europa.eu/policies/schengen/smart-borders/entry-exit-system_en"
+    },
+    {
+      "title": "Official EU website for EES and ETIAS (travel-europe.europa.eu)",
+      "url": "https://travel-europe.europa.eu/"
+    }
+  ]
+}

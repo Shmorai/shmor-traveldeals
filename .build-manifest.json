@@ -1,5 +1,10 @@
 [
   "all-inclusive-holidays/index.html",
+  "blog/christmas-market-city-breaks/index.html",
+  "blog/ees-etias-europe-entry-rules/index.html",
+  "blog/uk-eta-guide/index.html",
+  "blog/winter-sun-destinations/index.html",
+  "blog/index.html",
   "cheap-flights/index.html",
   "city-breaks/index.html",
   "destinations/canary-islands/index.html",
@@ -13,6 +18,7 @@
   "search/index.html",
   "search-index.json",
   "404.html",
+  "blog/feed.xml",
   "sitemap.xml",
   "robots.txt"
 ]

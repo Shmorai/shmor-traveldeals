@@ -11,13 +11,20 @@ A Shmor marketplace (shared rules in `../../CLAUDE.md`): its own brand, design a
 | Design: styles | `assets/site.css` (kit defaults at the top; **TravelDeals theme** block at the bottom) |
 | Generated output (don't edit by hand) | `index.html`, `*/index.html`, `sitemap.xml`, `robots.txt`, `404.html`, `search/`, `search-index.json` |
 
-## Pages (11)
-Home · all-inclusive-holidays · last-minute-holidays · cheap-flights · hotel-deals · city-breaks · package-holidays · family-holidays · destinations · destinations/canary-islands · destinations/orlando.
+## Pages (16)
+Home · all-inclusive-holidays · last-minute-holidays · cheap-flights · hotel-deals · city-breaks · package-holidays · family-holidays · destinations · destinations/canary-islands · destinations/orlando · blog (+4 posts).
 Top menu = pages with `navOrder` (All-inclusive, Last minute, Flights, Hotels, City breaks, Destinations).
 
 ## Design
 "Bright metasearch" (redesigned 2026-10-13 at the user's request to look more like trivago.com; style only, no trivago branding): white pages, Inter font, ocean blue #0A6CD6 (buttons, links), coral #FF6B4A (deal badges; matches the shmor.ai card accent), green #12805C ("View deal" buttons), grey bands #F3F5F8. Logo = white map pin with a coral dot in a blue rounded square + "Travel**Deals**" + "by Shmor.ai" pill (links to shmor.ai). Home: centred hero with one big white search card (Destination + "Trip type" select added by `assets/site.js`, folded into `?q=`), quick chips, then the "Start exploring" cards moved up with CSS `order` (HTML order unchanged). Cards have colour-gradient "photo" panels. Inner pages: grey title band with breadcrumbs. Bottom CTA = blue band. Light grey footer. Mobile checked at 375px (search stacks, no horizontal scroll). The previous dark "sunset over the ocean" theme is in git history.
 **Photos:** every page has an `"image"` in its content JSON: `{ "src": "https://images.unsplash.com/photo-…", "alt", "credit", "creditUrl" }`. It becomes the page's photo banner (white text over a dark overlay, credit bottom-right), the photo on its "Start exploring"/related card, its search-result thumbnail and its og:image (1200×630). Photos are free-licence Unsplash images (not Unsplash+), hotlinked from their CDN and resized by URL. To change one, swap `src`/`credit`/`creditUrl` and rebuild. New pages should always get an image.
+
+## Blog (/blog/)
+Added 2026-10-13 to win Google traffic with timely, original posts (the user asked for "live updated blogs" on popular travel topics; we agreed copying other sites' posts wouldn't help SEO, so we publish our own).
+- Index: `content/blog.json` (`"type": "blog"`, menu item "Travel blog"). Posts: `content/blog/<slug>.json` with `"type": "post"`, `"date"`, `"updated"`, `image`, `sections`, `faqs`, optional `"sources": [{title,url}]` (official sources for any rules/fees/dates).
+- The build adds BlogPosting JSON-LD, byline + date + reading time, "More travel reads", the RSS feed `/blog/feed.xml`, and the 3 newest posts on the homepage (`"latestPosts": 3` in home.json).
+- Posts so far: EES & ETIAS, UK ETA, winter sun, Christmas market city breaks.
+- Writing rules: research current facts with web search and confirm on official sites (europa.eu, gov.uk, airport/tourism sites). Write "as of" wording for anything that changes, link the official source, no invented prices/stats/quotes, link to relevant TravelDeals pages, and add a free-licence Unsplash image. Refresh `updated` when a post's facts are re-checked.
 
 ## Commands (run here)
 ```bash

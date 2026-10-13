@@ -1,0 +1,71 @@
+{
+  "updated": "2026-10-13",
+  "date": "2026-10-13",
+  "slug": "blog/uk-eta-guide",
+  "type": "post",
+  "title": "UK ETA Guide: Who Needs One, Cost and How to Apply",
+  "description": "Visiting the UK from the US or Europe? Find out who needs an electronic travel authorisation (ETA), what it costs, how long it lasts and how to apply.",
+  "h1": "UK ETA: who needs one, what it costs and how to apply",
+  "eyebrow": "Travel news · Entry rules",
+  "intro": "Most visitors who don’t need a UK visa now need an electronic travel authorisation (ETA) before they travel. Here is what to know.",
+  "image": {
+    "src": "https://images.unsplash.com/photo-1639189959071-8b3a80380f04",
+    "alt": "Red double-decker bus on a London street",
+    "credit": "Anna Claire Schellenberg",
+    "creditUrl": "https://unsplash.com/@thinspacesproductions"
+  },
+  "keywords": [
+    "uk eta",
+    "electronic travel authorisation",
+    "uk eta cost",
+    "uk eta for americans",
+    "uk eta for eu citizens",
+    "visit uk",
+    "london trip",
+    "uk entry requirements",
+    "eta app"
+  ],
+  "cardText": "Who needs a UK ETA, the £20 fee, how long it lasts and how to avoid copycat websites.",
+  "sections": [
+    {
+      "h2": "What is the UK ETA?",
+      "html": "<p>An electronic travel authorisation (ETA) is digital permission to travel to the UK. It isn’t a visa. It’s linked to your passport, and you need it before you travel for tourism, visiting family and friends, short business trips and some other short stays.</p>"
+    },
+    {
+      "h2": "Who needs one",
+      "html": "<ul><li>Most visitors who don’t need a visa for short stays, including citizens of the <strong>USA, Canada, Australia</strong> and <strong>European countries</strong>.</li><li><strong>Everyone travelling needs their own ETA, including babies and children.</strong></li></ul><p><strong>You don’t need one</strong> if you have a British or Irish passport, or if you already have permission to live, work or study in the UK. Some passengers transiting airside may also be exempt; check GOV.UK for the current rules.</p>"
+    },
+    {
+      "h2": "Cost and how long it lasts",
+      "html": "<ul><li><strong>The fee is £20 per person</strong>, which rose during 2026.</li><li>An ETA lets you visit the UK <strong>many times for up to 6 months</strong> per visit while it is valid. It usually lasts <strong>2 years</strong>, or until your passport expires if that is sooner.</li><li>If you get a new passport, you need a new ETA.</li></ul>"
+    },
+    {
+      "h2": "How to apply",
+      "html": "<ol><li>Apply through the <strong>official UK ETA app</strong> or on <strong>GOV.UK</strong>.</li><li>Have your passport ready, plus an email address and a way to pay.</li><li>You will be asked for a photo and to answer some questions.</li><li>Most decisions are made within a few working days, so apply well before you fly.</li></ol><p><strong>Watch out for copycat sites.</strong> Some websites charge much more than the official fee for the same ETA. Only apply through GOV.UK or the official app.</p>"
+    },
+    {
+      "h2": "Planning your UK trip",
+      "html": "<p>Once your ETA is sorted, compare <a href=\"/hotel-deals/\">hotel deals</a> and <a href=\"/cheap-flights/\">flights</a>, or browse <a href=\"/city-breaks/\">city breaks</a> for ideas.</p>"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Do Americans need an ETA to visit the UK?",
+      "a": "Yes. US citizens visiting the UK without a visa need an ETA, including children. Apply through the official UK ETA app or GOV.UK."
+    },
+    {
+      "q": "Do EU citizens need a UK ETA?",
+      "a": "Yes, most European visitors need one. Irish citizens are the exception: they don’t need an ETA."
+    },
+    {
+      "q": "How much does a UK ETA cost?",
+      "a": "The official fee is £20 per person. Sites charging more are not the official service."
+    }
+  ],
+  "sources": [
+    {
+      "title": "GOV.UK: Apply for an electronic travel authorisation (ETA)",
+      "url": "https://www.gov.uk/guidance/apply-for-an-electronic-travel-authorisation-eta"
+    }
+  ]
+}

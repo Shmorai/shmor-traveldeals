@@ -1,0 +1,29 @@
+{
+  "updated": "2026-10-13",
+  "slug": "blog",
+  "type": "blog",
+  "title": "Travel Blog: News, Holiday Tips & Guides | TravelDeals",
+  "description": "Travel news and holiday guides for UK, US and European travellers: new entry rules, where to find winter sun, city break ideas and money-saving tips.",
+  "nav": "Travel blog",
+  "navOrder": 7,
+  "eyebrow": "Travel news · Tips · Guides",
+  "h1": "Travel news and holiday guides",
+  "intro": "The travel topics people are searching for right now, explained clearly: new border rules, where to go next and how to get more from your budget.",
+  "image": {
+    "src": "https://images.unsplash.com/photo-1497302347632-904729bc24aa",
+    "alt": "Travel map, passport and notebook laid out for trip planning",
+    "credit": "John Matychuk",
+    "creditUrl": "https://unsplash.com/@john_matychuk"
+  },
+  "search": false,
+  "listTitle": "Latest posts",
+  "keywords": [
+    "travel blog",
+    "travel news",
+    "holiday tips",
+    "travel guides",
+    "vacation tips",
+    "travel advice"
+  ],
+  "cardText": "Travel news, entry rules and holiday ideas, updated regularly."
+}

@@ -13,7 +13,13 @@
 
    Every page gets: <title>, meta description, canonical, Open Graph,
    Twitter card, JSON-LD (WebSite/Organization, BreadcrumbList, FAQPage),
-   breadcrumbs, internal links, and optional photos (page "image"). Also writes sitemap.xml, robots.txt,
+   breadcrumbs, internal links, and optional photos (page "image").
+
+   Blog: a page with "type": "blog" (e.g. content/blog.json) lists every
+   "type": "post" page, newest first (posts live in content/blog/*.json and
+   need a "date": "YYYY-MM-DD"). Posts get BlogPosting JSON-LD, dates,
+   reading time and "sources"; any page can show "latestPosts": 3. Also
+   writes an RSS feed at /<blog slug>/feed.xml. Also writes sitemap.xml, robots.txt,
    404.html, /search/ (noindex) and search-index.json.
    ===================================================================== */
 const fs = require('fs');
@@ -64,6 +70,7 @@ for (const p of pages) {
   seenTitle.set(p.title, id); seenDesc.set(p.description, id);
   for (const r of p.related || []) if (!bySlug.has(r)) errors.push(`${id}: related page "${r}" doesn't exist`);
   for (const l of p.partners || []) if (!LINKS[l]) errors.push(`${id}: partner link "${l}" isn't in shmor-site.json "links"`);
+  if (p.type === 'post' && !/^\d{4}-\d{2}-\d{2}$/.test(p.date || '')) errors.push(`${id}: posts need "date": "YYYY-MM-DD"`);
   if (p.image && typeof p.image === 'object' && !p.image.src) errors.push(`${id}: "image" needs a "src"`);
   if (p.image && typeof p.image === 'object' && !p.image.alt) warnings.push(`${id}: "image" has no "alt" text`);
 }
@@ -74,6 +81,10 @@ if (errors.length) { console.error('\nBuild stopped:\n  ✗ ' + errors.join('\n 
 if (CHECK) { console.log(`✓ ${pages.length} pages valid.`); process.exit(0); }
 
 /* ---------- Helpers ---------- */
+const posts = pages.filter(p => p.type === 'post' && !p.noindex).sort((a, b) => b.date.localeCompare(a.date) || a.title.localeCompare(b.title));
+const blogIndex = pages.find(p => p.type === 'blog');
+const fmtDate = d => new Date(d + 'T12:00:00Z').toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
+const readMins = p => Math.max(1, Math.round(strip([p.intro, ...(p.sections || []).map(s => s.html), ...(p.faqs || []).map(f => f.a)].join(' ')).split(' ').length / 220));
 const pageUrl = p => `${BASE}/${p.slug ? p.slug + '/' : ''}`;
 const pagePath = p => `/${p.slug ? p.slug + '/' : ''}`;
 const label = p => p.nav || p.short || p.h1;
@@ -121,6 +132,13 @@ function head(p, { noindex = false, canonical = true } = {}) {
     isPartOf: { '@id': `${BASE}/#website` }, dateModified: p.updated || TODAY, inLanguage: seo.locale || 'en' });
   const bc = crumbs(p);
   if (bc.length) graph.push({ '@type': 'BreadcrumbList', itemListElement: bc.map((c, i) => ({ '@type': 'ListItem', position: i + 1, name: c.name, item: c.url })) });
+  if (p.type === 'post') graph.push({ '@type': 'BlogPosting', '@id': `${url}#post`, mainEntityOfPage: { '@id': `${url}#page` },
+    headline: p.h1, description: p.description, datePublished: p.date, dateModified: p.updated || p.date, inLanguage: seo.locale || 'en',
+    ...(img ? { image: img } : {}), ...(p.keywords?.length ? { keywords: p.keywords.join(', ') } : {}),
+    author: { '@type': 'Organization', name: `${NAME} editorial team`, url: `${BASE}/` },
+    publisher: { '@type': 'Organization', name: NAME, url: `${BASE}/`, ...(seo.logo ? { logo: { '@type': 'ImageObject', url: `${BASE}${seo.logo}` } } : {}) } });
+  if (p.type === 'blog') graph.push({ '@type': 'Blog', '@id': `${url}#blog`, url, name: p.h1, description: p.description,
+    blogPost: posts.slice(0, 20).map(x => ({ '@type': 'BlogPosting', headline: x.h1, url: pageUrl(x), datePublished: x.date })) });
   if (p.faqs?.length) graph.push({ '@type': 'FAQPage', mainEntity: p.faqs.map(f => ({ '@type': 'Question', name: strip(f.q), acceptedAnswer: { '@type': 'Answer', text: strip(f.a) } })) });
 
   return [
@@ -131,6 +149,8 @@ function head(p, { noindex = false, canonical = true } = {}) {
     canonical ? `<link rel="canonical" href="${url}">` : '',
     noindex || p.noindex ? `<meta name="robots" content="noindex, follow">` : `<meta name="robots" content="index, follow, max-image-preview:large">`,
     `<meta property="og:type" content="${p.slug ? 'article' : 'website'}">`,
+    p.type === 'post' ? `<meta property="article:published_time" content="${p.date}"><meta property="article:modified_time" content="${p.updated || p.date}">` : '',
+    blogIndex && posts.length ? `<link rel="alternate" type="application/rss+xml" title="${esc(NAME)} ${esc(label(blogIndex))}" href="${pagePath(blogIndex)}feed.xml">` : '',
     `<meta property="og:site_name" content="${esc(NAME)}">`,
     `<meta property="og:title" content="${esc(p.ogTitle || p.title)}">`,
     `<meta property="og:description" content="${esc(p.description)}">`,
@@ -163,9 +183,27 @@ function hero(p) {
   ${p.eyebrow ? `<p class="eyebrow">${esc(p.eyebrow)}</p>` : ''}
   <h1>${p.h1Html || esc(p.h1)}</h1>
   ${p.intro ? `<p class="lede">${p.intro}</p>` : ''}
-  ${p.search === false ? '' : searchForm(p.searchPlaceholder)}
+  ${p.type === 'post' ? `<p class="post-byline">By the ${esc(NAME)} editorial team · <time datetime="${p.date}">${fmtDate(p.date)}</time>${p.updated && p.updated !== p.date ? ` · Updated <time datetime="${p.updated}">${fmtDate(p.updated)}</time>` : ''} · ${readMins(p)} min read</p>` : ''}
+  ${p.search === false || (p.type === 'post' && p.search !== true) ? '' : searchForm(p.searchPlaceholder)}
   ${p.chips?.length ? `<div class="chips">${p.chips.map(c => `<a href="${c.slug !== undefined ? pagePath(bySlug.get(c.slug) || { slug: c.slug }) : `/search/?q=${encodeURIComponent(c.q)}`}">${esc(c.label)}</a>`).join('')}</div>` : ''}
 </div>${p.slug ? '' : '<div class="hero-art" aria-hidden="true"></div>'}${credit(i)}</section>`;
+}
+
+function postCard(x) {
+  return `<a class="card post-card${x.image ? ' has-img' : ''}" href="${pagePath(x)}">${cardImg(x)}<span class="post-meta"><time datetime="${x.date}">${fmtDate(x.date)}</time> · ${readMins(x)} min read</span><h3>${esc(x.h1)}</h3><p>${esc(x.cardText || x.description)}</p><span class="cta">Read more →</span></a>`;
+}
+function postList(p) {
+  const n = p.type === 'blog' ? posts.length : p.latestPosts || 0;
+  const list = posts.filter(x => x.slug !== p.slug).slice(0, n);
+  if (!list.length) return '';
+  const title = p.type === 'blog' ? (p.listTitle || 'Latest posts') : (p.latestTitle || `Latest from the ${blogIndex ? label(blogIndex).toLowerCase() : 'blog'}`);
+  const more = p.type !== 'blog' && blogIndex && posts.length > list.length ? `<p class="more-link"><a href="${pagePath(blogIndex)}">See all posts →</a></p>` : '';
+  return `<section class="related posts"><div class="wrap"><h2>${esc(title)}</h2><div class="grid">${list.map(postCard).join('')}</div>${more}</div></section>`;
+}
+function sources(p) {
+  if (!p.sources?.length) return '';
+  return `<section class="sources"><div class="wrap"><h2>${esc(p.sourcesTitle || 'Sources and official links')}</h2><ul>${p.sources.map(s =>
+    `<li><a href="${esc(s.url)}" rel="noopener" target="_blank">${esc(s.title)}</a></li>`).join('')}</ul></div></section>`;
 }
 
 function breadcrumbHtml(p) {
@@ -221,6 +259,7 @@ function faqs(p) {
 }
 
 function related(p) {
+  if (p.type === 'post' && !p.related) return postList({ ...p, latestPosts: 3, latestTitle: p.relatedTitle || 'More travel reads' });
   const list = (p.related || []).map(s => bySlug.get(s)).filter(Boolean);
   if (!list.length) return '';
   return `<section class="related"><div class="wrap"><h2>${esc(p.relatedTitle || 'Keep exploring')}</h2><div class="grid">${list.map(r => `
@@ -237,7 +276,7 @@ const layout = read('templates/layout.html');
 // Top menu = pages with a navOrder (nav = their short label, also used in breadcrumbs)
 const navPages = pages.filter(p => p.slug && p.navOrder !== undefined).sort((a, b) => a.navOrder - b.navOrder);
 const navHtml = navPages.map(p => `<a href="${pagePath(p)}">${esc(label(p))}</a>`).join('');
-const footerNav = pages.filter(p => p.slug && !p.noindex).sort((a, b) => (a.navOrder ?? 99) - (b.navOrder ?? 99) || a.slug.localeCompare(b.slug))
+const footerNav = pages.filter(p => p.slug && !p.noindex && p.type !== 'post').sort((a, b) => (a.navOrder ?? 99) - (b.navOrder ?? 99) || a.slug.localeCompare(b.slug))
   .map(p => `<li><a href="${pagePath(p)}">${esc(label(p))}</a></li>`).join('');
 
 function render(p, main, opts) {
@@ -257,7 +296,7 @@ const written = [];
 const out = (rel, text) => { const f = path.join(ROOT, rel); fs.mkdirSync(path.dirname(f), { recursive: true }); fs.writeFileSync(f, text); written.push(rel); };
 
 for (const p of pages) {
-  const main = [breadcrumbHtml(p), hero(p), highlights(p), partnerBlock(p), sections(p), faqs(p), related(p), bottomCta(p)].join('\n');
+  const main = [breadcrumbHtml(p), hero(p), postList(p), highlights(p), partnerBlock(p), sections(p), faqs(p), sources(p), related(p), bottomCta(p)].join('\n');
   out(p.slug ? `${p.slug}/index.html` : 'index.html', render(p, main));
 }
 
@@ -276,8 +315,13 @@ out('404.html', render({ slug: '404', title: `Page not found | ${NAME}`, descrip
 
 // Sitemap + robots
 const indexable = pages.filter(p => !p.noindex);
+if (blogIndex && posts.length) {
+  const x = s => esc(strip(s));
+  out(`${blogIndex.slug}/feed.xml`, `<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel>\n<title>${x(`${NAME}: ${label(blogIndex)}`)}</title><link>${pageUrl(blogIndex)}</link><description>${x(blogIndex.description)}</description><language>${esc(seo.locale || 'en')}</language>\n<atom:link href="${pageUrl(blogIndex)}feed.xml" rel="self" type="application/rss+xml"/>\n${posts.slice(0, 30).map(p =>
+    `<item><title>${x(p.h1)}</title><link>${pageUrl(p)}</link><guid>${pageUrl(p)}</guid><pubDate>${new Date(p.date + 'T08:00:00Z').toUTCString()}</pubDate><description>${x(p.description)}</description></item>`).join('\n')}\n</channel></rss>\n`);
+}
 out('sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${indexable.map(p =>
-  `  <url><loc>${pageUrl(p)}</loc><lastmod>${p.updated || TODAY}</lastmod></url>`).join('\n')}\n</urlset>\n`);
+  `  <url><loc>${pageUrl(p)}</loc><lastmod>${p.updated || p.date || TODAY}</lastmod></url>`).join('\n')}\n</urlset>\n`);
 out('robots.txt', `User-agent: *\nAllow: /\nDisallow: /search/\n\nSitemap: ${BASE}/sitemap.xml\n`);
 
 // Remove pages that no longer exist

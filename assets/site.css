@@ -125,6 +125,16 @@ section h2 { font-size: clamp(26px, 3.4vw, 36px); margin-bottom: 24px; }
 .photo-credit a { color: inherit; }
 .card-img { display: block; width: calc(100% + 44px); max-width: none; height: auto; aspect-ratio: 5 / 3; object-fit: cover; margin: -22px -22px 12px; }
 
+/* Blog: post meta, byline, sources */
+.post-meta { font-size: 13px; color: var(--ink-3); }
+.post-byline { font-size: 14px; color: var(--ink-3); margin: 14px 0 0; }
+.hero.has-img .post-byline { color: rgba(255,255,255,.85); }
+.sources { padding: 8px 0 40px; }
+.sources h2 { font-size: 20px; margin-bottom: 10px; }
+.sources ul { margin: 0; padding-left: 20px; color: var(--ink-2); }
+.sources a { color: var(--accent-2); }
+.more-link { margin: 18px 0 0; font-weight: 600; } .more-link a { color: var(--accent-2); }
+
 /* =====================================================================
    TravelDeals theme: "bright metasearch"
    Clean white pages, one big search box, ocean-blue actions,
@@ -341,3 +351,16 @@ section h2 { font-size: clamp(24px, 3vw, 30px); margin-bottom: 20px; }
 .card .card-img { width: calc(100% + 36px); margin: 0 -18px 12px; transition: transform .35s; }
 .card { isolation: isolate; }
 .card:hover .card-img { transform: scale(1.03); }
+
+/* Blog */
+.home main > .posts { order: 0; }
+.posts { background: var(--surface-2); box-shadow: 0 0 0 100vmax var(--surface-2); clip-path: inset(0 -100vmax); }
+.page-blog .posts { background: none; box-shadow: none; }
+.post-card .post-meta { margin-top: 2px; }
+.post-byline { font-weight: 500; }
+.sources h2 { font-size: 18px; }
+.sources li { margin-bottom: 4px; }
+.sources a, .more-link a { color: var(--accent); }
+/* Stronger overlay behind page-banner text so it stays readable on bright photos */
+.hero-page.has-img::after { background: linear-gradient(90deg, rgba(8,20,36,.82) 0%, rgba(8,20,36,.62) 55%, rgba(8,20,36,.35) 100%); }
+@media (max-width: 640px) { .hero-page.has-img::after { background: rgba(8,20,36,.7); } }

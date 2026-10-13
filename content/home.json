@@ -96,5 +96,7 @@
     "destinations"
   ],
   "relatedTitle": "Start exploring",
-  "ctaTitle": "Where do you want to go?"
+  "ctaTitle": "Where do you want to go?",
+  "latestPosts": 3,
+  "latestTitle": "Latest travel news and guides"
 }
