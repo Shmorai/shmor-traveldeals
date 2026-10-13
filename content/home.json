@@ -1,15 +1,94 @@
 {
+  "updated": "2026-10-13",
   "slug": "",
-  "title": "TravelDeals: Holiday deals, flights, hotels and city breaks ",
-  "description": "Holiday deals, flights, hotels and city breaks compared across trusted travel brands. Free to use, part of the Shmor.ai network.",
-  "eyebrow": "Part of the Shmor.ai network",
-  "h1": "TravelDeals",
-  "intro": "Holiday deals, flights, hotels and city breaks compared across trusted travel brands.",
-  "related": [],
+  "title": "TravelDeals: Compare Holiday Deals, Flights & Hotels",
+  "description": "Compare holiday deals, cheap flights, hotels and city breaks from trusted travel brands in one place. Free to use, no booking fees. Search more, do less.",
+  "eyebrow": "Holidays · Flights · Hotels · City breaks",
+  "h1": "Find your next trip. Pay less for it.",
+  "h1Html": "Find your next trip.<br><span class=\"hl\">Pay less for it.</span>",
+  "intro": "Compare holiday deals, flights and hotels from trusted travel brands in one place, for travellers in the US, UK and Europe. Free to use, with no booking fees.",
+  "searchPlaceholder": "Where to? Try “Tenerife in May” or “Orlando”",
+  "chips": [
+    {
+      "label": "All-inclusive",
+      "slug": "all-inclusive-holidays"
+    },
+    {
+      "label": "Last minute",
+      "slug": "last-minute-holidays"
+    },
+    {
+      "label": "Cheap flights",
+      "slug": "cheap-flights"
+    },
+    {
+      "label": "City breaks",
+      "slug": "city-breaks"
+    },
+    {
+      "label": "Canary Islands",
+      "slug": "destinations/canary-islands"
+    },
+    {
+      "label": "Orlando",
+      "slug": "destinations/orlando"
+    }
+  ],
+  "highlightsTitle": "Why compare with TravelDeals?",
+  "highlights": [
+    {
+      "title": "Everything in one search",
+      "text": "Holidays, flights, hotels and city breaks side by side, so you don’t need ten tabs open to find the right trip."
+    },
+    {
+      "title": "Book with trusted brands",
+      "text": "We send you to established travel companies and booking sites. You book directly with them, under their terms and protections."
+    },
+    {
+      "title": "Never a booking fee",
+      "text": "TravelDeals is free. You pay the provider’s price. They may pay us a small commission, which keeps the site free."
+    }
+  ],
   "sections": [
     {
-      "h2": "Why use TravelDeals?",
-      "html": "<p>Holiday deals, flights, hotels and city breaks compared across trusted travel brands.</p>"
+      "h2": "Holiday deals for every kind of trip",
+      "html": "<p>Whether you want a week of sun with everything included, a long weekend in a European capital or a theme park adventure with the kids, TravelDeals brings the options together so you can compare them quickly.</p>\n<ul><li><a href=\"/all-inclusive-holidays/\">All-inclusive holidays</a>: one upfront price for your room, meals and drinks.</li>\n<li><a href=\"/package-holidays/\">Package holidays</a>: flights, hotel and often transfers booked together.</li>\n<li><a href=\"/last-minute-holidays/\">Last-minute holidays</a>: late deals for flexible travellers.</li>\n<li><a href=\"/city-breaks/\">City breaks</a>: short trips to Europe’s and America’s great cities.</li>\n<li><a href=\"/cheap-flights/\">Cheap flights</a> and <a href=\"/hotel-deals/\">hotel deals</a> if you prefer to plan it yourself.</li></ul>"
+    },
+    {
+      "h2": "How to find a genuinely good travel deal",
+      "html": "<ul><li><strong>Be flexible.</strong> Moving your dates by a few days, or flying midweek, can make a real difference to the price.</li>\n<li><strong>Compare like for like.</strong> Check what’s included: luggage, transfers, meals and taxes all change the true cost.</li>\n<li><strong>Know when demand peaks.</strong> School holidays and major events push prices up. Book those dates early, or travel just outside them.</li>\n<li><strong>Check the cancellation terms.</strong> A slightly higher refundable rate can be better value than a non-refundable one if your plans might change.</li>\n<li><strong>Check how you’re protected.</strong> Package holidays often come with extra financial protection. See <a href=\"/package-holidays/\">package holidays</a>.</li></ul>"
+    },
+    {
+      "h2": "Travelling from the US, UK or Europe",
+      "html": "<p>TravelDeals is built for travellers on both sides of the Atlantic. Whether you call it a holiday or a vacation, the same rules apply: compare the total price, read the terms, and check entry requirements for your destination before you book.</p>\n<p>Consumer protections differ by country. In the UK, many flight-inclusive packages are protected under the ATOL scheme. In the EU, the Package Travel Directive covers packages. In the US, protection depends on how you pay and the provider’s own terms, so travel insurance is worth considering.</p>"
     }
-  ]
+  ],
+  "faqs": [
+    {
+      "q": "Is TravelDeals a travel agent?",
+      "a": "No. TravelDeals is a free comparison and discovery site. When you choose a deal, you book directly with the travel company or booking site, under their terms."
+    },
+    {
+      "q": "Does it cost anything to use TravelDeals?",
+      "a": "No. TravelDeals is free and never adds a booking fee. Some links are affiliate links, so the provider may pay us a commission when you book. This doesn’t change your price."
+    },
+    {
+      "q": "Are the prices I see final?",
+      "a": "Prices and availability are set by providers and can change quickly. Always check the final price, including taxes, fees and luggage, on the provider’s site before you pay."
+    },
+    {
+      "q": "Is my holiday protected if I book through a link here?",
+      "a": "Your protection depends on what you book and who you book with, not on how you found it. Packages often have extra protection (such as ATOL in the UK or the EU Package Travel Directive). For flights or hotels booked separately, check the provider’s terms and consider travel insurance."
+    }
+  ],
+  "related": [
+    "all-inclusive-holidays",
+    "last-minute-holidays",
+    "cheap-flights",
+    "city-breaks",
+    "hotel-deals",
+    "destinations"
+  ],
+  "relatedTitle": "Start exploring",
+  "ctaTitle": "Where do you want to go?"
 }

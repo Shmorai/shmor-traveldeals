@@ -42,7 +42,21 @@
     "travel",
     "airport",
     "car hire",
-    "getaway"
+    "getaway",
+    "holiday deals",
+    "travel deals",
+    "package holiday",
+    "last minute",
+    "city breaks",
+    "cheap flights",
+    "hotel deals",
+    "all inclusive holidays",
+    "family holiday",
+    "canary islands",
+    "gran canaria",
+    "fuerteventura",
+    "disney",
+    "universal"
   ],
   "fallback": "",
   "popular": [
@@ -51,18 +65,22 @@
       "q": "all-inclusive holidays"
     },
     {
-      "label": "Last-minute city breaks",
-      "q": "city break"
+      "label": "Last-minute deals",
+      "q": "last minute holidays"
+    },
+    {
+      "label": "Canary Islands sun",
+      "q": "canary islands holidays"
     }
   ],
   "offers": [],
   "links": {},
   "seo": {
     "siteName": "TravelDeals",
-    "description": "Holiday deals, flights, hotels and city breaks compared across trusted travel brands.",
+    "description": "Compare holiday deals, cheap flights, hotels and city breaks from trusted travel brands in one place.",
     "locale": "en",
     "ogLocale": "en_GB",
-    "themeColor": "#0A0C0E",
-    "searchPlaceholder": "What are you looking for?"
+    "themeColor": "#07111C",
+    "searchPlaceholder": "Where to? Try “Tenerife in May”"
   }
 }

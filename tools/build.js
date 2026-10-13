@@ -216,21 +216,21 @@ function bottomCta(p) {
 
 /* ---------- Layout ---------- */
 const layout = read('templates/layout.html');
-const navPages = pages.filter(p => p.nav && p.slug).sort((a, b) => (a.navOrder ?? 99) - (b.navOrder ?? 99));
-const navHtml = navPages.map(p => `<a href="${pagePath(p)}">${esc(p.nav)}</a>`).join('');
+// Top menu = pages with a navOrder (nav = their short label, also used in breadcrumbs)
+const navPages = pages.filter(p => p.slug && p.navOrder !== undefined).sort((a, b) => a.navOrder - b.navOrder);
+const navHtml = navPages.map(p => `<a href="${pagePath(p)}">${esc(label(p))}</a>`).join('');
 const footerNav = pages.filter(p => p.slug && !p.noindex).sort((a, b) => (a.navOrder ?? 99) - (b.navOrder ?? 99) || a.slug.localeCompare(b.slug))
   .map(p => `<li><a href="${pagePath(p)}">${esc(label(p))}</a></li>`).join('');
 
 function render(p, main, opts) {
-  return layout
-    .replace('{{head}}', () => head(p, opts))
-    .replace(/{{nav}}/g, () => navHtml)
-    .replace('{{main}}', () => main)
-    .replace('{{footer_nav}}', () => footerNav)
-    .replace(/{{year}}/g, String(new Date().getFullYear()))
-    .replace(/{{site_name}}/g, esc(NAME))
-    .replace(/{{body_class}}/g, p.slug ? `page page-${p.slug.split('/')[0]}` : 'home');
+  const fill = {
+    head: head(p, opts), nav: navHtml, main, footer_nav: footerNav,
+    year: String(new Date().getFullYear()), site_name: esc(NAME),
+    body_class: p.slug ? `page page-${p.slug.split('/')[0]}` : 'home',
+  };
+  return layout.replace(/{{([a-z_]+)}}/g, (m, k) => (k in fill ? fill[k] : m));
 }
+for (const k of ['head', 'main']) if (!layout.includes(`{{${k}}}`)) { console.error(`templates/layout.html must contain {{${k}}}`); process.exit(1); }
 
 /* ---------- Write ---------- */
 const MANIFEST = path.join(ROOT, '.build-manifest.json');

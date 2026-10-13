@@ -29,7 +29,7 @@ h1, h2, h3, h4 { font-family: var(--display); line-height: 1.12; letter-spacing:
 .bar { display: flex; align-items: center; justify-content: space-between; height: 70px; gap: 20px; }
 .brand { font: 700 24px var(--display); text-decoration: none; letter-spacing: -.03em; }
 .nav { display: flex; gap: 24px; }
-.nav a { text-decoration: none; color: var(--ink-2); font-size: 15px; font-weight: 500; }
+.nav a { text-decoration: none; color: var(--ink-2); font-size: 15px; font-weight: 500; white-space: nowrap; }
 .nav a:hover { color: var(--ink); }
 .menu { display: none; background: none; border: 0; padding: 8px; cursor: pointer; }
 .menu span { display: block; width: 22px; height: 2px; background: var(--ink); margin: 5px 0; border-radius: 2px; }
@@ -115,3 +115,96 @@ section h2 { font-size: clamp(26px, 3.4vw, 36px); margin-bottom: 24px; }
 .foot-cols a { text-decoration: none; } .foot-cols a:hover { color: var(--ink); }
 .disclosure { border-top: 1px solid var(--line); margin-top: 36px; padding-top: 20px; font-size: 13px; }
 @media (max-width: 760px) { .foot-cols { grid-template-columns: 1fr 1fr; } }
+
+/* =====================================================================
+   TravelDeals theme: "sunset over the ocean"
+   Navy night sky · coral sunset · lagoon teal · warm sun
+   ===================================================================== */
+:root {
+  --accent: #FF6B4A;      /* coral sunset: buttons, highlights */
+  --accent-2: #2EC4B6;    /* lagoon teal: links, secondary */
+  --sun: #FFC15E;
+  --bg: #07111C;
+  --surface: #0D1B2A;
+  --surface-2: #12243A;
+  --line: #1D3249;
+  --ink: #F5F7FA;
+  --ink-2: #B0C0D2;
+  --ink-3: #7F93A9;
+}
+body { background: var(--bg); }
+
+/* Brand */
+.brand { display: inline-flex; align-items: center; gap: 10px; }
+.td-mark { width: 36px; height: 36px; flex: 0 0 auto; }
+.td-word { font: 700 24px var(--display); letter-spacing: -.03em; }
+.td-word b { font-weight: 700; color: var(--accent); }
+.by { font: 500 12px var(--font); color: var(--ink-3); border: 1px solid var(--line); border-radius: 999px; padding: 3px 9px; margin-left: 2px; white-space: nowrap; }
+@media (max-width: 520px) { .by { display: none; } }
+.nav a[aria-current], .nav a:hover { color: var(--ink); }
+
+/* Home hero: night sky fading into a sunset over the sea */
+.hero-home {
+  padding: 104px 0 150px;
+  background:
+    radial-gradient(900px 420px at 78% 100%, rgba(255,107,74,.30), transparent 70%),
+    linear-gradient(180deg, #07111C 0%, #0A1828 50%, #132A42 100%);
+  isolation: isolate;
+}
+.hero-home .wrap { position: relative; z-index: 2; }
+.hero-art {
+  position: absolute; z-index: 0; right: 6%; bottom: 40px; width: 360px; height: 360px; border-radius: 50%;
+  background: radial-gradient(circle at 50% 45%, #FFD27A 0%, #FFB347 30%, #FF6B4A 62%, rgba(255,107,74,0) 72%);
+  opacity: .9; pointer-events: none;
+}
+.hero-home::after { /* the sea */
+  content: ""; position: absolute; z-index: 1; left: 0; right: 0; bottom: 0; height: 150px; pointer-events: none;
+  background:
+    repeating-linear-gradient(180deg, rgba(46,196,182,.16) 0 2px, transparent 2px 13px),
+    linear-gradient(180deg, rgba(10,24,40,.6), #07111C 95%);
+}
+.hero-home::before { /* flight path */
+  content: ""; position: absolute; z-index: 1; left: 0; top: 70px; width: 100%; height: 260px; pointer-events: none; opacity: .5;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 260' preserveAspectRatio='none'%3E%3Cpath d='M-20 230 C 300 40, 700 40, 1220 150' fill='none' stroke='%23B0C0D2' stroke-width='2' stroke-dasharray='2 12' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat center / 100% 100%;
+}
+.hero h1 .hl { background: linear-gradient(95deg, var(--sun), var(--accent) 70%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.hero-home .lede { color: #C9D6E4; }
+@media (max-width: 860px) {
+  .hero-art { width: 220px; height: 220px; right: -40px; bottom: 60px; opacity: .55; }
+  .hero-home { padding: 72px 0 130px; }
+}
+
+/* Inner page hero */
+.hero-page { background: radial-gradient(700px 300px at 90% -10%, rgba(255,107,74,.20), transparent 70%), linear-gradient(180deg, #0A1828, var(--bg)); padding: 40px 0 56px; }
+.eyebrow { color: var(--accent-2); }
+
+/* Search */
+.search { background: #0B1726; border-color: #24405E; box-shadow: 0 18px 50px rgba(0,0,0,.35); }
+.search:focus-within { border-color: var(--accent); }
+.search button { background: linear-gradient(95deg, #FF8A4C, var(--accent)); box-shadow: 0 6px 18px rgba(255,107,74,.35); }
+.chips a { background: rgba(255,255,255,.03); }
+
+/* Tiles: numbered with a sunset rule */
+.highlights .grid { counter-reset: tile; }
+.tile { position: relative; padding-top: 30px; border-top: 3px solid transparent; border-image: linear-gradient(90deg, var(--sun), var(--accent), transparent) 1; border-radius: 0 0 var(--radius) var(--radius); }
+.tile::before { counter-increment: tile; content: "0" counter(tile); position: absolute; top: 14px; right: 18px; font: 700 14px var(--display); color: var(--ink-3); }
+
+/* Cards & offers */
+.card:hover, .offer:hover { border-color: var(--accent); box-shadow: 0 16px 40px rgba(0,0,0,.35); }
+.cta { color: var(--accent); }
+.badge { background: var(--sun); color: #2A1400; }
+.prose a { color: var(--accent-2); text-underline-offset: 3px; }
+.faq summary::after { color: var(--accent); }
+
+/* Bottom CTA: sunset band */
+.cta-band .wrap { background: linear-gradient(120deg, #1A2F4A 0%, #3A2A45 55%, #6B3240 100%); border: 0; }
+.cta-band h2 { color: #fff; }
+.cta-band .search { background: rgba(7,17,28,.75); }
+
+.site-footer { background: #050D16; }
+/* Keep the sun clear of the text on mid-size screens */
+@media (max-width: 1180px) and (min-width: 861px) {
+  .hero-art { right: -150px; bottom: 70px; width: 340px; height: 340px; opacity: .7; }
+}
+.hero-home .lede, .hero-home .search, .hero-home .chips { max-width: 640px; }
+.hero-home .chips a { background: rgba(7,17,28,.7); }

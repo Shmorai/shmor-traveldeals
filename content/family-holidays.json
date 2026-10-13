@@ -1,0 +1,53 @@
+{
+  "updated": "2026-10-13",
+  "slug": "family-holidays",
+  "title": "Family Holidays: Compare Family-Friendly Deals",
+  "description": "Compare family holiday deals, kid-friendly resorts and theme park trips. Tips on school-holiday pricing, room types, kids’ clubs and flying with children.",
+  "keywords": [
+    "family holidays",
+    "family vacations",
+    "kids holidays",
+    "family resorts"
+  ],
+  "cardText": "Kid-friendly resorts, theme parks and tips for beating school-holiday prices.",
+  "eyebrow": "Holiday deals",
+  "h1": "Family holidays",
+  "intro": "Find a holiday the whole family will enjoy, at a price that works. Compare family-friendly deals and use our tips to plan with less stress.",
+  "sections": [
+    {
+      "h2": "What makes a great family holiday?",
+      "html": "<p>Short transfers, pools and beaches, plenty of food choice and a kids’ club or family entertainment make a big difference. For many families, an <a href=\"/all-inclusive-holidays/\">all-inclusive</a> resort keeps costs predictable, while theme park trips like <a href=\"/destinations/orlando/\">Orlando</a> are a once-in-a-lifetime adventure.</p>"
+    },
+    {
+      "h2": "Beating school-holiday prices",
+      "html": "<ul><li>Book peak school-holiday dates early for the best choice.</li><li>Look at the start or end of the holidays, which can be cheaper than the middle weeks.</li><li>Consider destinations with shorter flights or less demand on those dates.</li><li>Compare packages, which often include free or discounted child places.</li></ul>"
+    },
+    {
+      "h2": "Choosing the right room and resort",
+      "html": "<p>Family rooms, suites or apartments give everyone more space. Check bed configurations, cot availability, shaded pool areas and kids’ club ages and hours. Recent reviews from other families are often the most useful guide.</p>"
+    },
+    {
+      "h2": "Flying with children",
+      "html": "<ul><li>Choose flight times that fit around naps and bedtime where you can.</li><li>Check baggage rules for pushchairs, car seats and baby food.</li><li>Make sure every child has the right travel documents, including their own passport.</li></ul>"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "When is the cheapest time for a family holiday?",
+      "a": "Outside school holidays is usually cheapest. If you must travel in the holidays, the first or last week can cost less than the middle."
+    },
+    {
+      "q": "Do children need their own passport?",
+      "a": "Yes. In the UK, US and EU, children need their own passport to travel internationally. Check the requirements for your destination too."
+    },
+    {
+      "q": "What age are kids’ clubs for?",
+      "a": "It varies by resort. Many cater for roughly ages 4–12, and some have separate clubs for babies, toddlers or teens. Check the resort details."
+    }
+  ],
+  "related": [
+    "destinations/orlando",
+    "all-inclusive-holidays",
+    "package-holidays"
+  ]
+}

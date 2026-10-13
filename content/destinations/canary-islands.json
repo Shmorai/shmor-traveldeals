@@ -1,0 +1,56 @@
+{
+  "updated": "2026-10-13",
+  "slug": "destinations/canary-islands",
+  "nav": "Canary Islands",
+  "title": "Canary Islands Holidays: Deals & Island Guide",
+  "description": "Compare Canary Islands holiday deals and find the right island for you: Tenerife, Gran Canaria, Lanzarote or Fuerteventura. Weather, when to go and tips.",
+  "keywords": [
+    "canary islands holidays",
+    "tenerife holidays",
+    "lanzarote holidays",
+    "gran canaria holidays",
+    "fuerteventura holidays"
+  ],
+  "cardText": "Tenerife, Gran Canaria, Lanzarote or Fuerteventura? Find your island and compare deals.",
+  "eyebrow": "Destination guide · Spain",
+  "h1": "Canary Islands holidays",
+  "intro": "Mild weather all year, volcanic scenery and beaches for every taste. Find the right Canary Island for you and compare holiday deals.",
+  "searchPlaceholder": "Search Tenerife, Lanzarote, Gran Canaria…",
+  "sections": [
+    {
+      "h2": "Which Canary Island is right for you?",
+      "html": "<ul><li><strong>Tenerife</strong>: the largest island, with lively resorts in the south and Mount Teide, Spain’s highest peak, at its heart.</li>\n<li><strong>Gran Canaria</strong>: varied landscapes, from dunes to mountains, and a busy capital, Las Palmas.</li>\n<li><strong>Lanzarote</strong>: dramatic volcanic scenery, including Timanfaya National Park, and a relaxed pace.</li>\n<li><strong>Fuerteventura</strong>: long sandy beaches and some of Europe’s best conditions for windsurfing and kitesurfing.</li>\n<li><strong>La Palma, La Gomera and El Hierro</strong>: quieter islands for hiking and nature.</li></ul>"
+    },
+    {
+      "h2": "When to go",
+      "html": "<p>The Canaries are a year-round destination. Winters are mild and sunny, which makes them hugely popular for winter sun, and summers are warm without the extreme heat of mainland southern Europe. School holidays and the winter months are busy, so book those early.</p>"
+    },
+    {
+      "h2": "Getting there",
+      "html": "<p>There are direct flights to the main islands from the UK and many European cities, typically around four hours from the UK. From the US, most travellers connect via mainland Spain or another European hub. The islands are part of Spain, so they use the euro.</p>"
+    },
+    {
+      "h2": "Things to do",
+      "html": "<ul><li>Take the cable car up Mount Teide in Teide National Park (Tenerife).</li><li>See the volcanic landscapes of Timanfaya National Park (Lanzarote).</li><li>Explore the Maspalomas dunes (Gran Canaria).</li><li>Try watersports on Fuerteventura’s beaches.</li></ul>\n<p>Many visitors choose an <a href=\"/all-inclusive-holidays/\">all-inclusive</a> resort and add day trips to see more of the island.</p>"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Are the Canary Islands warm in winter?",
+      "a": "Yes. They’re known for mild, sunny winters, with daytime temperatures often around the low 20s °C, which makes them one of Europe’s most popular winter-sun destinations."
+    },
+    {
+      "q": "Which Canary Island is best for families?",
+      "a": "Tenerife and Gran Canaria have the widest choice of family resorts and attractions. Lanzarote and Fuerteventura suit families who prefer a quieter beach holiday."
+    },
+    {
+      "q": "Do I need a passport for the Canary Islands?",
+      "a": "The Canaries are part of Spain and the Schengen area. EU citizens can travel with a national ID card. UK and US visitors need a valid passport. Check the latest entry requirements before you travel."
+    }
+  ],
+  "related": [
+    "all-inclusive-holidays",
+    "family-holidays",
+    "package-holidays"
+  ]
+}

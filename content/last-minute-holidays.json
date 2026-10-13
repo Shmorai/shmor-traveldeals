@@ -1,0 +1,56 @@
+{
+  "updated": "2026-10-13",
+  "slug": "last-minute-holidays",
+  "nav": "Last minute",
+  "navOrder": 2,
+  "title": "Last-Minute Holidays: Compare Late Deals",
+  "description": "Find last-minute holiday deals, late flights and hotel offers. How late deals work, when to look, and what to check before you book at short notice.",
+  "keywords": [
+    "last minute holidays",
+    "late deals",
+    "last minute vacations",
+    "last minute getaways"
+  ],
+  "cardText": "Late deals for flexible travellers, plus what to check before booking at short notice.",
+  "eyebrow": "Holiday deals",
+  "h1": "Last-minute holidays",
+  "intro": "Ready to go at short notice? Compare late holiday deals, and use our checklist so your bargain doesn’t turn into a headache.",
+  "searchPlaceholder": "Where could you go next week?",
+  "sections": [
+    {
+      "h2": "How last-minute deals work",
+      "html": "<p>Travel companies want to fill seats and rooms that haven’t sold. As departure gets closer, some lower prices to attract flexible travellers. That’s where last-minute deals come from.</p>\n<p>It isn’t guaranteed, though. Popular dates and destinations often get <strong>more</strong> expensive close to departure as availability runs out. Late deals reward flexibility on where and when, not just how late you book.</p>"
+    },
+    {
+      "h2": "When to look",
+      "html": "<ul><li><strong>Off-peak periods</strong> usually have the most late availability.</li>\n<li><strong>School holidays and major events</strong> rarely have bargains at the last minute. Book these early.</li>\n<li><strong>Midweek departures</strong> are often cheaper than weekend ones.</li></ul>"
+    },
+    {
+      "h2": "Checklist before you book at short notice",
+      "html": "<ul><li>Check your passport is valid for the destination. Some countries need several months left on it.</li>\n<li>Check entry requirements such as visas or electronic travel authorisations (for example, the ESTA for the US). Some take time to approve.</li>\n<li>Arrange travel insurance as soon as you book.</li>\n<li>Check luggage allowances, transfer times and check-in rules.</li>\n<li>Read the cancellation terms. Late bookings are often non-refundable.</li></ul>"
+    },
+    {
+      "h2": "Search smart for late deals",
+      "html": "<p>Start with your travel dates and budget rather than a fixed destination, then compare what’s available. <a href=\"/package-holidays/\">Package holidays</a> often have the strongest late offers, because operators can discount flights and hotels together. Booking separately via <a href=\"/cheap-flights/\">cheap flights</a> and <a href=\"/hotel-deals/\">hotel deals</a> gives you more control.</p>"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Are last-minute holidays always cheaper?",
+      "a": "No. They can be, especially off-peak, but busy dates often rise in price as they sell out. Compare against booking in advance before deciding."
+    },
+    {
+      "q": "How late can I book a holiday?",
+      "a": "Some providers let you book just days before departure. Leave enough time for entry requirements, travel insurance and getting to the airport."
+    },
+    {
+      "q": "Do last-minute deals include flights?",
+      "a": "Many late deals are package holidays that include flights and accommodation, but you can also find late hotel-only and flight-only offers."
+    }
+  ],
+  "related": [
+    "package-holidays",
+    "cheap-flights",
+    "all-inclusive-holidays"
+  ]
+}

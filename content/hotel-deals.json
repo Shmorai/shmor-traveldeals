@@ -1,0 +1,56 @@
+{
+  "updated": "2026-10-13",
+  "slug": "hotel-deals",
+  "nav": "Hotels",
+  "navOrder": 4,
+  "title": "Hotel Deals: Compare Hotel Prices & Offers",
+  "description": "Compare hotel deals and room prices across booking sites. Choose the right area, understand rates and cancellation terms, and avoid surprise charges.",
+  "keywords": [
+    "hotel deals",
+    "cheap hotels",
+    "hotel prices",
+    "hotel offers"
+  ],
+  "cardText": "Compare room prices and rates, choose the right area, and avoid surprise charges.",
+  "eyebrow": "Hotels",
+  "h1": "Hotel deals",
+  "intro": "Compare hotel prices across booking sites, then use our guide to choose the right rate, room and location.",
+  "searchPlaceholder": "Search hotels by city or area…",
+  "sections": [
+    {
+      "h2": "Compare the total price, not the headline rate",
+      "html": "<p>Hotel prices can look very different depending on whether taxes and fees are included. In the US, many hotels add a <strong>resort or destination fee</strong> on top of the room rate. In many European cities, a local <strong>tourist or city tax</strong> is charged per person per night, often paid at the hotel. Always compare the final price for your stay.</p>"
+    },
+    {
+      "h2": "Refundable or non-refundable?",
+      "html": "<p>Non-refundable rates are usually cheaper, but you lose the money if your plans change. Flexible rates cost more but let you cancel, often up to a day or two before arrival. If there’s any chance your plans might change, the flexible rate can be the better deal.</p>"
+    },
+    {
+      "h2": "Choose the right area",
+      "html": "<p>A cheaper hotel far from where you want to be can cost more in time and transport. Check how close it is to public transport, the sights you want to see or the beach, and read recent reviews about the neighbourhood.</p>"
+    },
+    {
+      "h2": "Hotel, apartment or resort?",
+      "html": "<ul><li><strong>Hotels</strong> suit short stays and <a href=\"/city-breaks/\">city breaks</a>.</li>\n<li><strong>Apartments</strong> give families and longer stays more space and a kitchen.</li>\n<li><strong>Resorts</strong> keep everything on site. See <a href=\"/all-inclusive-holidays/\">all-inclusive holidays</a>.</li></ul>"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Why does the same hotel cost different amounts on different sites?",
+      "a": "Booking sites can have different rates, room types, promotions and cancellation terms. Compare the same room, dates and conditions to see the real difference."
+    },
+    {
+      "q": "What is a resort fee?",
+      "a": "A mandatory daily charge some hotels add, common in the US, often covering things like Wi-Fi or pool access. It may not be in the headline rate, so check the final price."
+    },
+    {
+      "q": "Is it cheaper to book a hotel with a flight?",
+      "a": "Sometimes. Package deals can bundle discounts, and booking them together may add financial protection. Compare both ways for your dates."
+    }
+  ],
+  "related": [
+    "city-breaks",
+    "package-holidays",
+    "cheap-flights"
+  ]
+}

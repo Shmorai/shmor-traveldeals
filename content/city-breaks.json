@@ -1,0 +1,56 @@
+{
+  "updated": "2026-10-13",
+  "slug": "city-breaks",
+  "nav": "City breaks",
+  "navOrder": 5,
+  "title": "City Breaks: Compare Weekend & Short Break Deals",
+  "description": "Compare city break deals with flights and hotels. Ideas for weekend breaks in Europe and the US, when to go, and how to plan a short trip on a budget.",
+  "keywords": [
+    "city breaks",
+    "weekend breaks",
+    "short breaks",
+    "city trips"
+  ],
+  "cardText": "Weekend and short-break ideas across Europe and the US, with flight and hotel deals.",
+  "eyebrow": "Short breaks",
+  "h1": "City breaks",
+  "intro": "Two to four nights, one great city. Compare city break deals with flights and hotels, and get ideas for your next weekend away.",
+  "searchPlaceholder": "Search cities, e.g. “Lisbon”",
+  "sections": [
+    {
+      "h2": "City break ideas",
+      "html": "<p><strong>In Europe:</strong> Paris, Rome, Barcelona, Amsterdam, Lisbon, Prague, Berlin and Budapest are all classic short-break cities with plenty of flights.</p>\n<p><strong>In the US:</strong> New York, Chicago, New Orleans, Las Vegas and San Francisco are popular for long weekends, as are Boston and Washington, D.C.</p>"
+    },
+    {
+      "h2": "When to go",
+      "html": "<p>Spring and autumn (the “shoulder seasons”) often bring good weather, smaller crowds and lower prices than midsummer. Big events like festivals, trade fairs and sports fixtures can push hotel prices up, so check the calendar before you book.</p>"
+    },
+    {
+      "h2": "Package or book separately?",
+      "html": "<p>A flight-and-hotel package can be simpler and sometimes cheaper. Booking separately with <a href=\"/cheap-flights/\">cheap flights</a> and <a href=\"/hotel-deals/\">hotel deals</a> gives you more choice of times and locations. Compare both for your dates.</p>"
+    },
+    {
+      "h2": "Make the most of a short trip",
+      "html": "<ul><li>Stay central, so you spend less time travelling across the city.</li>\n<li>Look at transport passes or city cards that bundle travel and attractions.</li>\n<li>Book popular attractions ahead to skip the queues.</li>\n<li>Travel light with a cabin bag on short trips to avoid fees and waiting.</li></ul>"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "How long should a city break be?",
+      "a": "Most city breaks are two to four nights. That’s long enough to see the highlights without needing much time off."
+    },
+    {
+      "q": "When is the cheapest time for a city break?",
+      "a": "Off-peak periods and midweek stays are usually cheaper than weekends and school holidays, but it varies by city and events."
+    },
+    {
+      "q": "Do I need travel insurance for a short trip?",
+      "a": "It’s still a good idea, as it can cover cancellations, delays, lost bags and medical costs."
+    }
+  ],
+  "related": [
+    "hotel-deals",
+    "cheap-flights",
+    "last-minute-holidays"
+  ]
+}

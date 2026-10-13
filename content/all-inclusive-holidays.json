@@ -1,0 +1,56 @@
+{
+  "updated": "2026-10-13",
+  "slug": "all-inclusive-holidays",
+  "nav": "All-inclusive",
+  "navOrder": 1,
+  "title": "All-Inclusive Holidays: Compare Deals & Resorts",
+  "description": "Compare all-inclusive holiday deals and resorts in one place. What’s included, when to book, the best-value destinations and tips to avoid hidden costs.",
+  "keywords": [
+    "all inclusive holidays",
+    "all-inclusive vacations",
+    "all inclusive resorts",
+    "all inclusive deals"
+  ],
+  "cardText": "One upfront price for your room, meals and drinks. Compare resorts and what’s included.",
+  "eyebrow": "Holiday deals",
+  "h1": "All-inclusive holidays",
+  "intro": "Your room, meals and drinks in one upfront price. Compare all-inclusive holiday deals and resorts, and learn how to spot real value.",
+  "searchPlaceholder": "Search all-inclusive destinations…",
+  "sections": [
+    {
+      "h2": "What does all-inclusive usually include?",
+      "html": "<p>Most all-inclusive holidays cover your room, three meals a day, snacks, and local alcoholic and soft drinks. Many resorts also include non-motorised watersports, entertainment and kids’ clubs.</p>\n<p>What’s <strong>not</strong> included varies, so read the details. Common extras are premium or branded drinks, à la carte restaurants (or a limit on how often you can book them), room service, spa treatments, motorised watersports and excursions. Some resorts sell “premium” or “ultra” all-inclusive packages that add more of these.</p>"
+    },
+    {
+      "h2": "Is all-inclusive good value?",
+      "html": "<p>All-inclusive works best if you plan to spend most of your time at the resort. It also suits families and groups, because you know the total cost upfront. It’s often less good value if you want to explore, eat out locally or take lots of day trips. Then <strong>half board</strong> or <strong>bed and breakfast</strong> may cost less overall.</p>\n<p>A quick test: estimate what you’d spend on food and drink each day without it, multiply by the number of people and nights, and compare that with the price difference.</p>"
+    },
+    {
+      "h2": "Popular all-inclusive destinations",
+      "html": "<ul><li><a href=\"/destinations/canary-islands/\">Canary Islands</a>: year-round warmth within a short flight of the UK and Europe.</li>\n<li><strong>Turkey and Greece</strong>: classic summer sun with a wide choice of resorts.</li>\n<li><strong>Egypt’s Red Sea coast</strong>: winter sun, coral reefs and snorkelling.</li>\n<li><strong>Mexico and the Caribbean</strong>: Cancún, the Dominican Republic and Jamaica are all-inclusive favourites, especially from the US.</li></ul>"
+    },
+    {
+      "h2": "Tips for booking all-inclusive deals",
+      "html": "<ul><li>Compare the same board basis. Don’t compare an all-inclusive price with a room-only price.</li>\n<li>Check restaurant rules, drink brands and opening hours if they matter to you.</li>\n<li>Look at the resort’s location: beachfront, or a shuttle away?</li>\n<li>For school-holiday dates, booking early usually gives the most choice.</li>\n<li>Check whether transfers from the airport are included.</li></ul>"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Are tips included on all-inclusive holidays?",
+      "a": "Usually not. Tipping customs vary by country and resort. Check the resort’s guidance and local custom before you travel."
+    },
+    {
+      "q": "Is all-inclusive cheaper than half board?",
+      "a": "Not always. The upfront price is higher, but it can work out cheaper overall if you would otherwise buy most meals and drinks at the resort."
+    },
+    {
+      "q": "Do all-inclusive deals include flights?",
+      "a": "Many do, as part of a package holiday, but you can also book an all-inclusive hotel on its own. Check what each deal includes before comparing prices."
+    }
+  ],
+  "related": [
+    "package-holidays",
+    "family-holidays",
+    "destinations/canary-islands"
+  ]
+}

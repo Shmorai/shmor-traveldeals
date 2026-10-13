@@ -1,0 +1,53 @@
+{
+  "updated": "2026-10-13",
+  "slug": "package-holidays",
+  "title": "Package Holidays: Compare Flight + Hotel Deals",
+  "description": "Compare package holiday deals with flights, hotels and transfers together. How packages work, the protection they can offer, and when they save money.",
+  "keywords": [
+    "package holidays",
+    "holiday packages",
+    "flight and hotel deals",
+    "vacation packages"
+  ],
+  "cardText": "Flights, hotel and often transfers in one booking, with protection to match.",
+  "eyebrow": "Holiday deals",
+  "h1": "Package holidays",
+  "intro": "Flights, hotel and often transfers in one booking. Compare package holiday deals and see when a package beats booking it all yourself.",
+  "sections": [
+    {
+      "h2": "What is a package holiday?",
+      "html": "<p>A package holiday combines at least two travel services, usually flights and accommodation, sold together. Many packages also include airport transfers and a board basis such as half board or <a href=\"/all-inclusive-holidays/\">all-inclusive</a>.</p>"
+    },
+    {
+      "h2": "How packages can protect you",
+      "html": "<p>Packages often come with extra protection. In the <strong>UK</strong>, flight-inclusive packages from UK businesses are usually protected under the ATOL scheme, and the Package Travel Regulations make the organiser responsible for the whole package. In the <strong>EU</strong>, the Package Travel Directive gives similar rights. In the <strong>US</strong>, there’s no single equivalent, so check the provider’s terms and consider travel insurance.</p>\n<p>Always confirm the protection on the provider’s site before you pay.</p>"
+    },
+    {
+      "h2": "Package or do it yourself?",
+      "html": "<p>Packages are convenient and can be cheaper, especially for <a href=\"/last-minute-holidays/\">late deals</a> and peak family dates. Booking flights and hotels separately gives you more flexibility over times, airlines and where you stay. Compare both: the cheaper option changes from trip to trip.</p>"
+    },
+    {
+      "h2": "What to check before booking",
+      "html": "<ul><li>Flight times, airline and luggage allowance</li><li>Transfer length and type (shared or private)</li><li>Board basis and what it covers</li><li>Payment schedule, deposit and cancellation terms</li><li>Financial protection details</li></ul>"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Are package holidays cheaper than booking separately?",
+      "a": "Sometimes. Operators can bundle discounted flights and rooms, but for some trips booking separately is cheaper. Compare both for your dates."
+    },
+    {
+      "q": "What is ATOL protection?",
+      "a": "ATOL is a UK scheme that protects many flight-inclusive holidays sold by UK businesses. If the company fails, it helps you get home or get your money back."
+    },
+    {
+      "q": "Can I pay for a package holiday with a deposit?",
+      "a": "Many providers offer low-deposit options, with the balance due some weeks before departure. Check the payment schedule and cancellation terms first."
+    }
+  ],
+  "related": [
+    "all-inclusive-holidays",
+    "family-holidays",
+    "last-minute-holidays"
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "updated": "2026-10-13",
+  "slug": "destinations/orlando",
+  "nav": "Orlando",
+  "title": "Orlando Holidays: Theme Park Deals & Guide",
+  "description": "Compare Orlando holiday and vacation deals. Plan theme park trips to Walt Disney World and Universal, choose where to stay, and learn when to visit.",
+  "keywords": [
+    "orlando holidays",
+    "orlando vacations",
+    "disney world holidays",
+    "florida holidays",
+    "universal orlando"
+  ],
+  "cardText": "Plan theme park trips to Walt Disney World and Universal, and compare Orlando deals.",
+  "eyebrow": "Destination guide · Florida, USA",
+  "h1": "Orlando holidays",
+  "intro": "The theme park capital of the world. Compare Orlando holiday and vacation deals, and plan the parks, hotels and timing for your trip.",
+  "searchPlaceholder": "Search Orlando hotels and packages…",
+  "sections": [
+    {
+      "h2": "Orlando’s theme parks",
+      "html": "<p><strong>Walt Disney World Resort</strong> has four theme parks (Magic Kingdom, EPCOT, Disney’s Hollywood Studios and Disney’s Animal Kingdom) plus two water parks. <strong>Universal Orlando Resort</strong> includes Universal Studios Florida, Universal Islands of Adventure and Universal Epic Universe, which opened in 2025. SeaWorld Orlando, LEGOLAND Florida and Kennedy Space Center are all within reach too.</p>"
+    },
+    {
+      "h2": "Where to stay",
+      "html": "<ul><li><strong>On-site resort hotels</strong> keep you close to the parks, and some include perks such as early park entry.</li>\n<li><strong>International Drive</strong> has a huge range of hotels, restaurants and attractions between the main parks.</li>\n<li><strong>Vacation homes</strong> in areas such as Kissimmee give families space, kitchens and private pools.</li></ul>\n<p>Compare options on our <a href=\"/hotel-deals/\">hotel deals</a> page.</p>"
+    },
+    {
+      "h2": "When to visit",
+      "html": "<p>Late winter, spring and autumn usually bring the most comfortable weather. Summers are hot and humid with frequent afternoon storms, and the Atlantic hurricane season runs from June to November. School holidays and US public holidays are the busiest, and most expensive, times in the parks.</p>"
+    },
+    {
+      "h2": "Getting there and getting around",
+      "html": "<p>Orlando International Airport (MCO) has direct flights from the UK and Europe, and from across the US. UK and most EU visitors travelling under the Visa Waiver Program need an approved ESTA before they fly. Many visitors hire a car, as attractions are spread out, though resort shuttles and rideshares are also common.</p>"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "How many days do you need in Orlando?",
+      "a": "It depends how many parks you want to visit. Many families plan a week or more to enjoy the main parks at a relaxed pace."
+    },
+    {
+      "q": "Do I need an ESTA to visit Orlando?",
+      "a": "If you’re visiting the US from the UK or a Visa Waiver Program country in Europe, you’ll usually need an approved ESTA before you travel. Apply well in advance."
+    },
+    {
+      "q": "Do I need a car in Orlando?",
+      "a": "Not always, but it’s often useful. Attractions are spread out. If you stay on-site at a resort, shuttles may cover most of your trip."
+    }
+  ],
+  "related": [
+    "family-holidays",
+    "package-holidays",
+    "hotel-deals"
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "updated": "2026-10-13",
+  "slug": "cheap-flights",
+  "nav": "Flights",
+  "navOrder": 3,
+  "title": "Cheap Flights: Compare Airfares & Find Deals",
+  "description": "Compare cheap flights and airfares across airlines and booking sites. When to book, how to avoid extra fees, and practical tips for finding lower fares.",
+  "keywords": [
+    "cheap flights",
+    "flight deals",
+    "cheap airfare",
+    "budget flights"
+  ],
+  "cardText": "Compare airfares, avoid surprise fees, and use our tips to find lower fares.",
+  "eyebrow": "Flights",
+  "h1": "Cheap flights",
+  "intro": "Compare airfares across airlines and booking sites, and learn the simple habits that help you pay less to fly.",
+  "searchPlaceholder": "Search flights, e.g. “London to Rome”",
+  "sections": [
+    {
+      "h2": "How to find cheaper flights",
+      "html": "<ul><li><strong>Flex your dates.</strong> Flying a day earlier or later, or midweek, can lower the fare.</li>\n<li><strong>Try nearby airports</strong> at both ends of your trip.</li>\n<li><strong>Compare one-way combinations.</strong> Two one-way tickets, even on different airlines, are sometimes cheaper than a return.</li>\n<li><strong>Set price alerts</strong> for routes you’re watching rather than checking every day.</li>\n<li><strong>Book peak dates early.</strong> Holiday periods rarely get cheaper closer to departure.</li></ul>"
+    },
+    {
+      "h2": "Watch out for extra fees",
+      "html": "<p>The cheapest headline fare isn’t always the cheapest trip. Add up what you actually need: checked bags, cabin bags, seat selection, priority boarding, payment fees and airport check-in charges. A slightly higher fare that includes a bag can easily cost less overall.</p>"
+    },
+    {
+      "h2": "Budget or full-service airline?",
+      "html": "<p>Budget airlines often have the lowest base fares and suit short trips with light luggage. Full-service airlines usually include more, such as luggage, meals and more flexible tickets, which can make them better value on longer flights or with family luggage. Compare the total price for your trip, not just the fare.</p>"
+    },
+    {
+      "h2": "Booking direct or through a booking site",
+      "html": "<p>Comparison and booking sites help you see many airlines at once. Booking direct with the airline can make changes and refunds simpler. Whichever you choose, check who you’re paying and whose terms apply. If you want a hotel too, compare against a <a href=\"/package-holidays/\">package</a>.</p>"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "When is the best time to book flights?",
+      "a": "There’s no single magic day. Prices depend on route, season and demand. For peak dates, booking early usually helps. Off-peak, prices can be steadier, so use alerts to watch for drops."
+    },
+    {
+      "q": "Am I entitled to compensation if my flight is delayed?",
+      "a": "It depends where you fly. In the UK and EU, passengers may be entitled to compensation for long delays or cancellations on eligible flights under UK261/EU261 rules. In the US, airlines must offer a refund if a flight is cancelled or significantly changed and you choose not to travel. Check the rules for your flight."
+    },
+    {
+      "q": "Are budget airlines worth it?",
+      "a": "Often, for short trips with little luggage. Add any extras you need before comparing, as fees can close the gap with full-service airlines."
+    }
+  ],
+  "related": [
+    "hotel-deals",
+    "city-breaks",
+    "last-minute-holidays"
+  ]
+}

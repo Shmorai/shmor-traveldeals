@@ -1,0 +1,34 @@
+{
+  "updated": "2026-10-13",
+  "slug": "destinations",
+  "nav": "Destinations",
+  "navOrder": 6,
+  "title": "Holiday Destinations: Guides, Weather & Deals",
+  "description": "Explore holiday destination guides with the best time to visit, what to expect and how to find deals, from the Canary Islands to Orlando and beyond.",
+  "keywords": [
+    "holiday destinations",
+    "where to go on holiday",
+    "travel guides",
+    "vacation destinations"
+  ],
+  "cardText": "Destination guides with when to go, what to expect and how to find deals.",
+  "eyebrow": "Destination guides",
+  "h1": "Holiday destinations",
+  "intro": "Not sure where to go? Our destination guides cover when to visit, what to expect and how to find the best deals.",
+  "searchPlaceholder": "Search destinations…",
+  "sections": [
+    {
+      "h2": "Destination guides",
+      "html": "<ul><li><a href=\"/destinations/canary-islands/\">Canary Islands</a>: year-round sunshine, volcanic landscapes and great-value <a href=\"/all-inclusive-holidays/\">all-inclusive</a> options.</li>\n<li><a href=\"/destinations/orlando/\">Orlando</a>: the world’s theme park capital, perfect for <a href=\"/family-holidays/\">family holidays</a>.</li></ul>\n<p>We’re adding new destination guides regularly.</p>"
+    },
+    {
+      "h2": "Choosing where to go",
+      "html": "<p>Start with when you can travel and how far you want to fly, then think about what kind of trip you want: beach, city, adventure or theme parks. Our <a href=\"/city-breaks/\">city breaks</a> page has ideas for short trips, and <a href=\"/last-minute-holidays/\">last-minute holidays</a> can help if you’re flexible.</p>"
+    }
+  ],
+  "related": [
+    "destinations/canary-islands",
+    "destinations/orlando",
+    "city-breaks"
+  ]
+}

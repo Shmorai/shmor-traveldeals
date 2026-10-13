@@ -13,49 +13,63 @@
 <meta property="og:url" content="https://traveldeals.shmor.ai/search/">
 <meta property="og:locale" content="en_GB">
 <meta name="twitter:card" content="summary">
-<meta name="theme-color" content="#0A0C0E">
+<meta name="theme-color" content="#07111C">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/site.css">
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://traveldeals.shmor.ai/search/#page","url":"https://traveldeals.shmor.ai/search/","name":"Search | TravelDeals","description":"Search TravelDeals.","isPartOf":{"@id":"https://traveldeals.shmor.ai/#website"},"dateModified":"2026-10-13","inLanguage":"en"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://traveldeals.shmor.ai/"},{"@type":"ListItem","position":2,"name":"Search TravelDeals","item":"https://traveldeals.shmor.ai/search/"}]}]}</script>
 </head>
-<!-- This site's own design. The build fills in {{head}}, , <section class="hero hero-page"><div class="wrap"><h1 id="search-title">Search TravelDeals</h1><form class="search " action="/search/" role="search">
-  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-  <input name="q" type="search" placeholder="What are you looking for?" aria-label="Search TravelDeals">
-  <button type="submit">Search</button>
-</form></div></section>
-<section class="related"><div class="wrap"><div class="grid" id="search-results" aria-live="polite"></div></div></section>, , TravelDeals, 2026, page page-search. -->
+<!-- TravelDeals design. tools/build.js fills each double-brace placeholder: head, nav, main, footer_nav, site_name, year, body_class. -->
 <body class="page page-search">
 <a class="skip" href="#main">Skip to content</a>
 <header class="site-header">
   <div class="wrap bar">
-    <a class="brand" href="/">TravelDeals</a>
-    <nav class="nav" data-nav aria-label="Main"></nav>
+    <a class="brand" href="/" aria-label="TravelDeals home">
+      <svg class="td-mark" viewBox="0 0 40 40" aria-hidden="true">
+        <defs><linearGradient id="tdSun" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFC15E"/><stop offset="1" stop-color="#FF6B4A"/></linearGradient></defs>
+        <rect width="40" height="40" rx="11" fill="#0F2236"/>
+        <circle cx="20" cy="21" r="9" fill="url(#tdSun)"/>
+        <rect x="6" y="23" width="28" height="11" fill="#0F2236"/>
+        <path d="M8 26h24M11 30h18" stroke="#2EC4B6" stroke-width="2.4" stroke-linecap="round"/>
+      </svg>
+      <span class="td-word">Travel<b>Deals</b></span>
+      <span class="by">by Shmor.ai</span>
+    </a>
+    <nav class="nav" data-nav aria-label="Main"><a href="/all-inclusive-holidays/">All-inclusive</a><a href="/last-minute-holidays/">Last minute</a><a href="/cheap-flights/">Flights</a><a href="/hotel-deals/">Hotels</a><a href="/city-breaks/">City breaks</a><a href="/destinations/">Destinations</a></nav>
     <button class="menu" data-menu aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </header>
 <main id="main">
-{{main}}
+<section class="hero hero-page"><div class="wrap"><h1 id="search-title">Search TravelDeals</h1><form class="search " action="/search/" role="search">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+  <input name="q" type="search" placeholder="Where to? Try “Tenerife in May”" aria-label="Search TravelDeals">
+  <button type="submit">Search</button>
+</form></div></section>
+<section class="related"><div class="wrap"><div class="grid" id="search-results" aria-live="polite"></div></div></section>
 </main>
 <footer class="site-footer">
   <div class="wrap">
     <div class="foot-cols">
-      <div><a class="brand" href="/">TravelDeals</a><p>Part of the <a href="https://shmor.ai/">Shmor.ai</a> network. Search more. Do less.</p></div>
-      <div><h4>Guides</h4><ul>{{footer_nav}}</ul></div>
+      <div>
+        <a class="brand" href="/"><span class="td-word">Travel<b>Deals</b></span></a>
+        <p>Holiday deals, flights, hotels and city breaks compared in one place. Part of the <a href="https://shmor.ai/">Shmor.ai</a> network: search more, do less.</p>
+      </div>
+      <div><h4>Holidays &amp; guides</h4><ul><li><a href="/all-inclusive-holidays/">All-inclusive</a></li><li><a href="/last-minute-holidays/">Last minute</a></li><li><a href="/cheap-flights/">Flights</a></li><li><a href="/hotel-deals/">Hotels</a></li><li><a href="/city-breaks/">City breaks</a></li><li><a href="/destinations/">Destinations</a></li><li><a href="/destinations/canary-islands/">Canary Islands</a></li><li><a href="/destinations/orlando/">Orlando</a></li><li><a href="/family-holidays/">Family holidays</a></li><li><a href="/package-holidays/">Package holidays</a></li></ul></div>
       <div><h4>Shmor.ai</h4><ul>
         <li><a href="https://shmor.ai/">All Shmor marketplaces</a></li>
-        <li><a href="https://shmor.ai/about/">About</a></li>
+        <li><a href="https://shmor.ai/about/">About Shmor</a></li>
         <li><a href="https://shmor.ai/contact/">Contact</a></li>
+        <li><a href="https://shmor.ai/partners/">Advertise with us</a></li>
       </ul></div>
       <div><h4>Legal</h4><ul>
-        <li><a href="https://shmor.ai/privacy/">Privacy</a></li>
-        <li><a href="https://shmor.ai/cookies/">Cookies</a></li>
-        <li><a href="https://shmor.ai/terms/">Terms</a></li>
+        <li><a href="https://shmor.ai/privacy/">Privacy policy</a></li>
+        <li><a href="https://shmor.ai/cookies/">Cookie policy</a></li>
+        <li><a href="https://shmor.ai/terms/">Terms of use</a></li>
         <li><a href="https://shmor.ai/affiliate-disclosure/">How we make money</a></li>
       </ul></div>
     </div>
-    <p class="disclosure">TravelDeals is free to use. Some links are affiliate links: if you book or buy through them we may earn a commission, at no extra cost to you. Prices and availability are set by providers and can change. © 2026 Shmor.ai</p>
+    <p class="disclosure">TravelDeals is a free comparison service and not a travel agent: you book directly with the provider, under their terms. Some links are affiliate links, so we may earn a commission at no extra cost to you. Prices and availability are set by providers and can change. © 2026 Shmor.ai</p>
   </div>
 </footer>
 <script src="/assets/site.js" defer></script>
