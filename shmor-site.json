@@ -80,7 +80,8 @@
     "description": "Compare holiday deals, cheap flights, hotels and city breaks from trusted travel brands in one place.",
     "locale": "en",
     "ogLocale": "en_GB",
-    "themeColor": "#07111C",
-    "searchPlaceholder": "Where to? Try “Tenerife in May”"
+    "themeColor": "#FFFFFF",
+    "searchPlaceholder": "Where to? Try “Tenerife in May”",
+    "fontsUrl": "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
   }
 }
