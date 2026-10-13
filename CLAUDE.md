@@ -31,5 +31,15 @@ After changing `shmor-site.json` (links, keywords, card), also run `node tools/s
 2. Show it on pages: add the slug to a page's `"partners": [...]`, or add an `"offers"` entry (`"pages": ["slug"]` to limit where it shows).
 3. `node tools/build.js`, then sync the master, then commit both repos.
 
+## History & decisions (from the setup chat "Shmor: master site & network setup", 2026-10-13)
+- **Why this site exists:** first marketplace of the Shmor network. Shmor.ai is the master hub. Each marketplace is its **own marketable brand on a subdomain prefix** (`<brand>.shmor.ai`; the user first suggested `www.traveldeals/shmor.ai`, which isn't a valid web address, so we agreed on `traveldeals.shmor.ai`). It replaced the planned "Shmor Travel" (`travel.shmor.ai`) entry.
+- **SEO is the priority:** the user wants TravelDeals to be **self-marketable on Google** with its own keywords, pages and tags. Google treats a subdomain largely as its own site, so it must earn rankings through its own landing pages, content and links. Hence one JSON file = one keyword landing page, static HTML (not JS-rendered), unique titles/descriptions, JSON-LD (WebSite, Organization, BreadcrumbList, FAQPage), sitemap and robots, noindex search page. Meta keywords tags are deliberately not used (Google ignores them).
+- **Markets:** US, UK and Europe. Copy uses both "holiday" and "vacation" and covers consumer protection in each (ATOL / UK Package Travel Regulations, EU Package Travel Directive, US = provider terms + insurance) and flight rights (UK261/EU261, US DOT refunds).
+- **Content rules:** factual, evergreen, no invented prices/deals/stats/reviews. No year in titles.
+- **Design brief:** own look distinct from shmor.ai but in the family. Dark "sunset over the ocean": the hero has a CSS sun, a dashed flight path and sea lines. The sun was moved aside on mid-size screens so text stays readable. Numbered highlight tiles with a sunset rule. A sunset-gradient search band at the bottom. Mobile checked at 375px (no horizontal scroll).
+- **Referral links:** none yet. The user has to be approved by travel programmes (Awin is strongest in the UK/EU, CJ/Impact in the US). Links go in `shmor-site.json`, are rendered as `https://shmor.ai/go/?to=<slug>&src=traveldeals-<page>` with `rel="sponsored nofollow"`, and were tested end to end with a dummy link (since removed).
+- **Status:** pre-launch. The repo isn't on GitHub yet (offer to create the **private** repo `Shmorai/shmor-traveldeals` via the user's Chrome and push as a backup, only with the user's OK). Not public, no DNS.
+- **Chat setup:** this site has its own pinned chat titled "TravelDeals". The master/network chat is pinned separately.
+
 ## Ideas / next
 Referral links from travel programmes · a social share image (1200×630, set `seo.image`) · more destination pages (Tenerife, Lanzarote, Dubai, Cancún, Greece, Turkey) · US "vacation" pages.
