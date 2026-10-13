@@ -1,0 +1,68 @@
+{
+  "$schema": "shmor-site/1",
+  "id": "traveldeals",
+  "name": "TravelDeals",
+  "subdomain": "traveldeals",
+  "order": 10,
+  "status": "building",
+  "icon": "plane",
+  "accent": "#FF6B4A",
+  "blurb": "Holiday deals, flights, hotels and city breaks compared across trusted travel brands.",
+  "keywords": [
+    "holiday",
+    "holidays",
+    "vacation",
+    "vacations",
+    "hotel",
+    "hotels",
+    "flight",
+    "flights",
+    "trip",
+    "city break",
+    "resort",
+    "all-inclusive",
+    "all inclusive",
+    "beach",
+    "cruise",
+    "villa",
+    "tenerife",
+    "spain",
+    "greece",
+    "dubai",
+    "lanzarote",
+    "paris",
+    "cancun",
+    "florida",
+    "orlando",
+    "las vegas",
+    "new york",
+    "hawaii",
+    "italy",
+    "portugal",
+    "travel",
+    "airport",
+    "car hire",
+    "getaway"
+  ],
+  "fallback": "",
+  "popular": [
+    {
+      "label": "All-inclusive holidays",
+      "q": "all-inclusive holidays"
+    },
+    {
+      "label": "Last-minute city breaks",
+      "q": "city break"
+    }
+  ],
+  "offers": [],
+  "links": {},
+  "seo": {
+    "siteName": "TravelDeals",
+    "description": "Holiday deals, flights, hotels and city breaks compared across trusted travel brands.",
+    "locale": "en",
+    "ogLocale": "en_GB",
+    "themeColor": "#0A0C0E",
+    "searchPlaceholder": "What are you looking for?"
+  }
+}
