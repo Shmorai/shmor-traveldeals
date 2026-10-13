@@ -24,6 +24,8 @@ Added 2026-10-13 to win Google traffic with timely, original posts (the user ask
 - Index: `content/blog.json` (`"type": "blog"`, menu item "Travel blog"). Posts: `content/blog/<slug>.json` with `"type": "post"`, `"date"`, `"updated"`, `image`, `sections`, `faqs`, optional `"sources": [{title,url}]` (official sources for any rules/fees/dates).
 - The build adds BlogPosting JSON-LD, byline + date + reading time, "More travel reads", the RSS feed `/blog/feed.xml`, and the 3 newest posts on the homepage (`"latestPosts": 3` in home.json).
 - Posts so far: EES & ETIAS, UK ETA, winter sun, Christmas market city breaks.
+- **Linking & routing:** every post is linked from 1–3 relevant pages via their `"related"` list (cards with photos), and its topic terms are added to `shmor-site.json` "keywords" so searches on shmor.ai route here (then sync the master).
+- **Weekly automation:** scheduled task "TravelDeals: weekly blog posts" (Mondays ~9:10, runs while the Claude app is open) researches trends, adds 2 posts, links them from older pages, adds routing keywords, re-checks dated facts, rebuilds, syncs, commits and pushes both repos (user approved auto-push). After launch: connect Google Search Console and submit the sitemap, then use its query data to improve titles/descriptions.
 - Writing rules: research current facts with web search and confirm on official sites (europa.eu, gov.uk, airport/tourism sites). Write "as of" wording for anything that changes, link the official source, no invented prices/stats/quotes, link to relevant TravelDeals pages, and add a free-licence Unsplash image. Refresh `updated` when a post's facts are re-checked.
 
 ## Commands (run here)
