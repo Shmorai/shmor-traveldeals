@@ -13,7 +13,7 @@
 
    Every page gets: <title>, meta description, canonical, Open Graph,
    Twitter card, JSON-LD (WebSite/Organization, BreadcrumbList, FAQPage),
-   breadcrumbs, internal links. Also writes sitemap.xml, robots.txt,
+   breadcrumbs, internal links, and optional photos (page "image"). Also writes sitemap.xml, robots.txt,
    404.html, /search/ (noindex) and search-index.json.
    ===================================================================== */
 const fs = require('fs');
@@ -64,6 +64,8 @@ for (const p of pages) {
   seenTitle.set(p.title, id); seenDesc.set(p.description, id);
   for (const r of p.related || []) if (!bySlug.has(r)) errors.push(`${id}: related page "${r}" doesn't exist`);
   for (const l of p.partners || []) if (!LINKS[l]) errors.push(`${id}: partner link "${l}" isn't in shmor-site.json "links"`);
+  if (p.image && typeof p.image === 'object' && !p.image.src) errors.push(`${id}: "image" needs a "src"`);
+  if (p.image && typeof p.image === 'object' && !p.image.alt) warnings.push(`${id}: "image" has no "alt" text`);
 }
 for (const o of site.offers || []) if (!LINKS[o.link]) errors.push(`shmor-site.json: offer "${o.title}" uses unknown link "${o.link}"`);
 
@@ -77,6 +79,17 @@ const pagePath = p => `/${p.slug ? p.slug + '/' : ''}`;
 const label = p => p.nav || p.short || p.h1;
 const goHref = (slug, src) => `${MASTER}/go/?to=${encodeURIComponent(slug)}&src=${encodeURIComponent(`${site.id}-${(src || 'home').replace(/\//g, '-')}`)}`;
 const AFF = 'rel="sponsored nofollow noopener" target="_blank"';
+
+// Photos. A page's "image" is a path ("/assets/img/x.jpg") or { "src", "alt", "credit", "creditUrl" }.
+// Unsplash URLs (images.unsplash.com) are resized and cropped by their CDN; other files are used as they are.
+const imgOf = i => !i ? null : typeof i === 'string' ? { src: i } : i;
+const isUnsplash = i => /^https:\/\/images\.unsplash\.com\//.test(i.src);
+const imgSrc = (i, w, h) => isUnsplash(i) ? `${i.src.split('?')[0]}?w=${w}${h ? `&h=${h}&fit=crop` : ''}&q=70&auto=format` : i.src;
+const imgSet = (i, widths, ratio) => isUnsplash(i) ? ` srcset="${widths.map(w => `${esc(imgSrc(i, w, ratio && Math.round(w * ratio)))} ${w}w`).join(', ')}"` : '';
+const absUrl = s => /^https?:/.test(s) ? s : BASE + s;
+const UTM = 'utm_source=shmor&utm_medium=referral';
+const credit = i => !i?.credit ? '' : `<p class="photo-credit">Photo: ${i.creditUrl ? `<a href="${esc(i.creditUrl)}?${UTM}" rel="nofollow noopener" target="_blank">${esc(i.credit)}</a>` : esc(i.credit)}${isUnsplash(i) ? ` on <a href="https://unsplash.com/?${UTM}" rel="nofollow noopener" target="_blank">Unsplash</a>` : ''}</p>`;
+const cardImg = r => { const i = imgOf(r.image); return i ? `<img class="card-img" src="${esc(imgSrc(i, 600, 360))}"${imgSet(i, [400, 600, 900], .6)} sizes="(max-width: 640px) 100vw, 380px" width="600" height="360" alt="${esc(i.alt || '')}" loading="lazy" decoding="async">` : ''; };
 
 function crumbs(p) {
   if (!p.slug) return [];
@@ -93,7 +106,8 @@ function crumbs(p) {
 /* ---------- Head: meta, social, structured data ---------- */
 function head(p, { noindex = false, canonical = true } = {}) {
   const url = pageUrl(p);
-  const img = p.image || seo.image;
+  const im = imgOf(p.image || seo.image);
+  const img = im && absUrl(imgSrc(im, 1200, 630));
   const graph = [];
   if (!p.slug) {
     graph.push({ '@type': 'WebSite', '@id': `${BASE}/#website`, url: `${BASE}/`, name: NAME, description: seo.description || p.description,
@@ -122,7 +136,9 @@ function head(p, { noindex = false, canonical = true } = {}) {
     `<meta property="og:description" content="${esc(p.description)}">`,
     `<meta property="og:url" content="${url}">`,
     `<meta property="og:locale" content="${esc(seo.ogLocale || 'en_GB')}">`,
-    img ? `<meta property="og:image" content="${BASE}${img}">` : '',
+    img ? `<meta property="og:image" content="${esc(img)}">` : '',
+    img && im.alt ? `<meta property="og:image:alt" content="${esc(im.alt)}">` : '',
+    pages.some(x => imgOf(x.image) && isUnsplash(imgOf(x.image))) ? `<link rel="preconnect" href="https://images.unsplash.com">` : '',
     `<meta name="twitter:card" content="${img ? 'summary_large_image' : 'summary'}">`,
     `<meta name="theme-color" content="${esc(seo.themeColor || '#0A0C0E')}">`,
     `<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">`,
@@ -141,13 +157,15 @@ const searchForm = (placeholder, cls = '') => `<form class="search ${cls}" actio
 </form>`;
 
 function hero(p) {
-  return `<section class="hero${p.slug ? ' hero-page' : ' hero-home'}"><div class="wrap">
+  const i = imgOf(p.image);
+  const photo = i ? `<img class="hero-img" src="${esc(imgSrc(i, 1600, 0))}"${imgSet(i, [800, 1200, 1600, 2200])} sizes="100vw" alt="${esc(i.alt || '')}" fetchpriority="high" decoding="async">` : '';
+  return `<section class="hero${p.slug ? ' hero-page' : ' hero-home'}${i ? ' has-img' : ''}">${photo}<div class="wrap">
   ${p.eyebrow ? `<p class="eyebrow">${esc(p.eyebrow)}</p>` : ''}
   <h1>${p.h1Html || esc(p.h1)}</h1>
   ${p.intro ? `<p class="lede">${p.intro}</p>` : ''}
   ${p.search === false ? '' : searchForm(p.searchPlaceholder)}
   ${p.chips?.length ? `<div class="chips">${p.chips.map(c => `<a href="${c.slug !== undefined ? pagePath(bySlug.get(c.slug) || { slug: c.slug }) : `/search/?q=${encodeURIComponent(c.q)}`}">${esc(c.label)}</a>`).join('')}</div>` : ''}
-</div>${p.slug ? '' : '<div class="hero-art" aria-hidden="true"></div>'}</section>`;
+</div>${p.slug ? '' : '<div class="hero-art" aria-hidden="true"></div>'}${credit(i)}</section>`;
 }
 
 function breadcrumbHtml(p) {
@@ -206,7 +224,7 @@ function related(p) {
   const list = (p.related || []).map(s => bySlug.get(s)).filter(Boolean);
   if (!list.length) return '';
   return `<section class="related"><div class="wrap"><h2>${esc(p.relatedTitle || 'Keep exploring')}</h2><div class="grid">${list.map(r => `
-    <a class="card" href="${pagePath(r)}"><h3>${esc(label(r))}</h3><p>${esc(r.cardText || r.description)}</p><span class="cta">Explore →</span></a>`).join('')}</div></div></section>`;
+    <a class="card${r.image ? ' has-img' : ''}" href="${pagePath(r)}">${cardImg(r)}<h3>${esc(label(r))}</h3><p>${esc(r.cardText || r.description)}</p><span class="cta">Explore →</span></a>`).join('')}</div></div></section>`;
 }
 
 function bottomCta(p) {
@@ -248,7 +266,7 @@ const searchPage = { slug: 'search', title: `Search | ${NAME}`, description: `Se
 out('search/index.html', render(searchPage, `<section class="hero hero-page"><div class="wrap"><h1 id="search-title">Search ${esc(NAME)}</h1>${searchForm()}</div></section>
 <section class="related"><div class="wrap"><div class="grid" id="search-results" aria-live="polite"></div></div></section>`, { noindex: true, canonical: false }));
 out('search-index.json', JSON.stringify(pages.filter(p => !p.noindex).map(p => ({
-  path: pagePath(p), title: label(p), text: p.cardText || p.description, terms: [p.title, p.h1, p.description, ...(p.keywords || [])].join(' ').toLowerCase(),
+  path: pagePath(p), title: label(p), text: p.cardText || p.description, img: p.image ? imgSrc(imgOf(p.image), 600, 360) : '', terms: [p.title, p.h1, p.description, ...(p.keywords || [])].join(' ').toLowerCase(),
 }))));
 
 // 404

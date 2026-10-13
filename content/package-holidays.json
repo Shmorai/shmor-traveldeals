@@ -13,6 +13,12 @@
   "eyebrow": "Holiday deals",
   "h1": "Package holidays",
   "intro": "Flights, hotel and often transfers in one booking. Compare package holiday deals and see when a package beats booking it all yourself.",
+  "image": {
+    "src": "https://images.unsplash.com/photo-1602088113235-229c19758e9f",
+    "alt": "Rows of beach umbrellas and sunbeds by the sea",
+    "credit": "David Vives",
+    "creditUrl": "https://unsplash.com/@davidvives"
+  },
   "sections": [
     {
       "h2": "What is a package holiday?",

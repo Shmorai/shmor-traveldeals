@@ -15,6 +15,12 @@
   "eyebrow": "Holiday deals",
   "h1": "Last-minute holidays",
   "intro": "Ready to go at short notice? Compare late holiday deals, and use our checklist so your bargain doesn’t turn into a headache.",
+  "image": {
+    "src": "https://images.unsplash.com/photo-1558413203-528a11565bf4",
+    "alt": "Traveller pulling a suitcase on the way to a trip",
+    "credit": "Gabrielle Henderson",
+    "creditUrl": "https://unsplash.com/@gabriellefaithhenderson"
+  },
   "searchPlaceholder": "Where could you go next week?",
   "sections": [
     {

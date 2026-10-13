@@ -15,6 +15,12 @@
   "eyebrow": "Flights",
   "h1": "Cheap flights",
   "intro": "Compare airfares across airlines and booking sites, and learn the simple habits that help you pay less to fly.",
+  "image": {
+    "src": "https://images.unsplash.com/photo-1530469641172-8ac15d0a7d6a",
+    "alt": "View of an aircraft wing above the clouds from a plane window",
+    "credit": "Blake Guidry",
+    "creditUrl": "https://unsplash.com/@blakeguidry"
+  },
   "searchPlaceholder": "Search flights, e.g. “London to Rome”",
   "sections": [
     {

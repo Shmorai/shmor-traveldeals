@@ -15,6 +15,12 @@
   "eyebrow": "Destination guide · Florida, USA",
   "h1": "Orlando holidays",
   "intro": "The theme park capital of the world. Compare Orlando holiday and vacation deals, and plan the parks, hotels and timing for your trip.",
+  "image": {
+    "src": "https://images.unsplash.com/photo-1609184889514-656548112551",
+    "alt": "Orlando city skyline across a lake on a sunny day",
+    "credit": "Mick Haupt",
+    "creditUrl": "https://unsplash.com/@rocinante_11"
+  },
   "searchPlaceholder": "Search Orlando hotels and packages…",
   "sections": [
     {

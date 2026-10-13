@@ -15,6 +15,12 @@
   "eyebrow": "Holiday deals",
   "h1": "All-inclusive holidays",
   "intro": "Your room, meals and drinks in one upfront price. Compare all-inclusive holiday deals and resorts, and learn how to spot real value.",
+  "image": {
+    "src": "https://images.unsplash.com/photo-1623718649591-311775a30c43",
+    "alt": "Resort swimming pool lined with palm trees",
+    "credit": "Cory Bjork",
+    "creditUrl": "https://unsplash.com/@corybjork"
+  },
   "searchPlaceholder": "Search all-inclusive destinations…",
   "sections": [
     {

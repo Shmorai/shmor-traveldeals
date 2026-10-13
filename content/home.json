@@ -34,6 +34,12 @@
       "slug": "destinations/orlando"
     }
   ],
+  "image": {
+    "src": "https://images.unsplash.com/photo-1622779536320-bb5f5b501a06",
+    "alt": "White sand beach and turquoise sea on a tropical island",
+    "credit": "Matheen Faiz",
+    "creditUrl": "https://unsplash.com/@matheenfaiz"
+  },
   "highlightsTitle": "Why compare with TravelDeals?",
   "highlights": [
     {

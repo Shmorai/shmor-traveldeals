@@ -13,6 +13,12 @@
   "eyebrow": "Holiday deals",
   "h1": "Family holidays",
   "intro": "Find a holiday the whole family will enjoy, at a price that works. Compare family-friendly deals and use our tips to plan with less stress.",
+  "image": {
+    "src": "https://images.unsplash.com/photo-1693020077268-1a3b572103c1",
+    "alt": "Family walking along the beach at sunset",
+    "credit": "Aliko Sunawang",
+    "creditUrl": "https://unsplash.com/@sunawang"
+  },
   "sections": [
     {
       "h2": "What makes a great family holiday?",

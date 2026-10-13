@@ -37,7 +37,7 @@
       return { p: p, score: score };
     }).filter(function (h) { return h.score > 0; }).sort(function (a, b) { return b.score - a.score; });
     out.innerHTML = hits.length
-      ? hits.map(function (h) { return '<a class="card" href="' + h.p.path + '"><h3>' + esc(h.p.title) + '</h3><p>' + esc(h.p.text) + '</p><span class="cta">Explore →</span></a>'; }).join('')
+      ? hits.map(function (h) { return '<a class="card' + (h.p.img ? ' has-img' : '') + '" href="' + h.p.path + '">' + (h.p.img ? '<img class="card-img" src="' + esc(h.p.img) + '" alt="" loading="lazy" width="600" height="360">' : '') + '<h3>' + esc(h.p.title) + '</h3><p>' + esc(h.p.text) + '</p><span class="cta">Explore →</span></a>'; }).join('')
       : '<p class="empty">No pages matched. Try a broader search, or browse the guides below.</p>' +
         pages.slice(0, 6).map(function (p) { return '<a class="card" href="' + p.path + '"><h3>' + esc(p.title) + '</h3><p>' + esc(p.text) + '</p></a>'; }).join('');
   }).catch(function () { out.innerHTML = '<p class="empty">Search is unavailable right now.</p>'; });

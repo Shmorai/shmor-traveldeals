@@ -15,6 +15,12 @@
   "eyebrow": "Destination guides",
   "h1": "Holiday destinations",
   "intro": "Not sure where to go? Our destination guides cover when to visit, what to expect and how to find the best deals.",
+  "image": {
+    "src": "https://images.unsplash.com/photo-1563789031959-4c02bcb41319",
+    "alt": "Whitewashed buildings and blue domes on a Greek island",
+    "credit": "Dan",
+    "creditUrl": "https://unsplash.com/@dgw_unsplash"
+  },
   "searchPlaceholder": "Search destinations…",
   "sections": [
     {

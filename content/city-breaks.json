@@ -15,6 +15,12 @@
   "eyebrow": "Short breaks",
   "h1": "City breaks",
   "intro": "Two to four nights, one great city. Compare city break deals with flights and hotels, and get ideas for your next weekend away.",
+  "image": {
+    "src": "https://images.unsplash.com/photo-1786813388835-ab43530ac7c6",
+    "alt": "Street of traditional half-timbered houses in Rothenburg ob der Tauber, Germany",
+    "credit": "Dawid Tkocz",
+    "creditUrl": "https://unsplash.com/@dawidtkocz"
+  },
   "searchPlaceholder": "Search cities, e.g. “Lisbon”",
   "sections": [
     {

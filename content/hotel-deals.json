@@ -15,6 +15,12 @@
   "eyebrow": "Hotels",
   "h1": "Hotel deals",
   "intro": "Compare hotel prices across booking sites, then use our guide to choose the right rate, room and location.",
+  "image": {
+    "src": "https://images.unsplash.com/photo-1631049307264-da0ec9d70304",
+    "alt": "Bright hotel bedroom with a made-up double bed",
+    "credit": "Point3D Commercial Imaging Ltd.",
+    "creditUrl": "https://unsplash.com/@3dottawa"
+  },
   "searchPlaceholder": "Search hotels by city or area…",
   "sections": [
     {

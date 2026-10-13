@@ -15,6 +15,12 @@
   "eyebrow": "Destination guide · Spain",
   "h1": "Canary Islands holidays",
   "intro": "Mild weather all year, volcanic scenery and beaches for every taste. Find the right Canary Island for you and compare holiday deals.",
+  "image": {
+    "src": "https://images.unsplash.com/photo-1563572318-00cd5e9c9fba",
+    "alt": "Sandy cove and clear blue water beneath volcanic cliffs in the Canary Islands",
+    "credit": "Thibault Mokuenko",
+    "creditUrl": "https://unsplash.com/@tmokuenko"
+  },
   "searchPlaceholder": "Search Tenerife, Lanzarote, Gran Canaria…",
   "sections": [
     {
