@@ -38,7 +38,7 @@ After changing `shmor-site.json` (links, keywords, card), also run `node tools/s
 - **Content rules:** factual, evergreen, no invented prices/deals/stats/reviews. No year in titles.
 - **Design brief:** own look distinct from shmor.ai but in the family. Dark "sunset over the ocean": the hero has a CSS sun, a dashed flight path and sea lines. The sun was moved aside on mid-size screens so text stays readable. Numbered highlight tiles with a sunset rule. A sunset-gradient search band at the bottom. Mobile checked at 375px (no horizontal scroll).
 - **Referral links:** none yet. The user has to be approved by travel programmes (Awin is strongest in the UK/EU, CJ/Impact in the US). Links go in `shmor-site.json`, are rendered as `https://shmor.ai/go/?to=<slug>&src=traveldeals-<page>` with `rel="sponsored nofollow"`, and were tested end to end with a dummy link (since removed).
-- **Status:** pre-launch. The repo isn't on GitHub yet (offer to create the **private** repo `Shmorai/shmor-traveldeals` via the user's Chrome and push as a backup, only with the user's OK). Not public, no DNS.
+- **Status:** pre-launch. Backed up to the **private** repo `Shmorai/shmor-traveldeals` (created 2026-10-13, branch `main`). Pages off, not public, no DNS. Push after commits; going public only when the user says launch.
 - **Chat setup:** this site has its own pinned chat titled "TravelDeals". The master/network chat is pinned separately.
 
 ## Ideas / next
