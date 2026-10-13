@@ -219,6 +219,55 @@ function highlights(p) {
     <div class="tile">${h.icon ? `<span class="tile-ico" aria-hidden="true">${h.icon}</span>` : ''}<h3>${esc(h.title)}</h3><p>${h.text}</p></div>`).join('')}</div></div></section>`;
 }
 
+/* Extra card sections from a page's "blocks": [{ type, title, intro, position: "top", items: [...] }].
+   Types: strip (trust bar), deals (icon cards), tiles (photo mosaic), steps (numbered), links (pill links).
+   Item: { title, text, badge, icon (name below), slug | href | q, image (defaults to the linked page's), cta }. */
+const ICONS = {
+  ship: ['M12 10.189V14', 'M12 2v3', 'M19 13V7a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v6', 'M19.38 20A11.6 11.6 0 0 0 21 14l-8.188-3.639a2 2 0 0 0-1.624 0L3 14a11.6 11.6 0 0 0 2.81 7.76', 'M2 21c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1s1.2 1 2.5 1c2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1'],
+  plane: ['M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z'],
+  tag: ['M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z', 'c:7.5,7.5,1'],
+  percent: ['M19 5 5 19', 'c:6.5,6.5,2.5', 'c:17.5,17.5,2.5'],
+  clock: ['c:12,12,10', 'M12 6v6l4 2'],
+  calendar: ['M8 2v4', 'M16 2v4', 'M5 4h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z', 'M3 10h18'],
+  gift: ['M4 8h16a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z', 'M12 8v13', 'M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7', 'M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5'],
+  wine: ['M8 22h8', 'M7 10h10', 'M12 15v7', 'M12 15a5 5 0 0 0 5-5c0-2-.5-4-2-8H9c-1.5 4-2 6-2 8a5 5 0 0 0 5 5Z'],
+  repeat: ['m17 2 4 4-4 4', 'M3 11v-1a4 4 0 0 1 4-4h14', 'm7 22-4-4 4-4', 'M21 13v1a4 4 0 0 1-4 4H3'],
+  users: ['M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2', 'c:9,7,4', 'M22 21v-2a4 4 0 0 0-3-3.87', 'M16 3.13a4 4 0 0 1 0 7.75'],
+  user: ['M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2', 'c:12,7,4'],
+  shield: ['M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z', 'm9 12 2 2 4-4'],
+  wallet: ['M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1', 'M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4'],
+  search: ['c:11,11,8', 'm21 21-4.3-4.3'],
+  compass: ['c:12,12,10', 'm16.24 7.76-1.804 5.411a2 2 0 0 1-1.265 1.265L7.76 16.24l1.804-5.411a2 2 0 0 1 1.265-1.265z'],
+  anchor: ['M12 22V8', 'M5 12H2a10 10 0 0 0 20 0h-3', 'c:12,5,3'],
+  pin: ['M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0', 'c:12,10,3'],
+  sun: ['c:12,12,4', 'M12 2v2', 'M12 20v2', 'm4.93 4.93 1.41 1.41', 'm17.66 17.66 1.41 1.41', 'M2 12h2', 'M20 12h2', 'm6.34 17.66-1.41 1.41', 'm19.07 4.93-1.41 1.41'],
+  star: ['M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z'],
+  check: ['M20 6 9 17l-5-5'],
+};
+const icon = name => !ICONS[name] ? '' : `<svg class="ico" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICONS[name].map(d =>
+  d.startsWith('c:') ? (([cx, cy, r]) => `<circle cx="${cx}" cy="${cy}" r="${r}"/>`)(d.slice(2).split(',')) : `<path d="${d}"/>`).join('')}</svg>`;
+const itemHref = it => it.href || (it.slug !== undefined ? pagePath(bySlug.get(it.slug) || { slug: it.slug }) : it.q ? `/search/?q=${encodeURIComponent(it.q)}` : '');
+
+function block(b) {
+  const items = (b.items || []).map(it => {
+    const page = it.slug !== undefined ? bySlug.get(it.slug) : null;
+    if (it.slug !== undefined && !page) console.warn(`  ! block item links to missing page "${it.slug}"`);
+    return { ...it, page, href: itemHref(it), title: it.title || (page && label(page)) || '', text: it.text ?? (page && page.cardText) ?? '' };
+  });
+  const tag = (it, cls, inner) => it.href ? `<a class="${cls}" href="${esc(it.href)}">${inner}</a>` : `<div class="${cls}">${inner}</div>`;
+  let body;
+  if (b.type === 'strip') body = `<ul class="strip-list">${items.map(it => `<li>${icon(it.icon || 'check')}<span><strong>${esc(it.title)}</strong>${it.text ? ` ${esc(it.text)}` : ''}</span></li>`).join('')}</ul>`;
+  else if (b.type === 'links') body = `<div class="pill-links">${items.map(it => tag(it, 'pill', `${it.icon ? icon(it.icon) : ''}${esc(it.title)}`)).join('')}</div>`;
+  else if (b.type === 'tiles') body = `<div class="tiles">${items.map((it, n) => tag(it, `tile-photo${n === 0 && b.feature !== false ? ' tile-feature' : ''}`,
+    `${cardImg({ image: it.image || (it.page && it.page.image) })}<span class="tile-shade"></span><span class="tile-body">${it.badge ? `<span class="tile-badge">${esc(it.badge)}</span>` : ''}<h3>${esc(it.title)}</h3>${it.text ? `<p>${esc(it.text)}</p>` : ''}</span>`)).join('')}</div>`;
+  else if (b.type === 'steps') body = `<ol class="steps">${items.map(it => `<li>${it.icon ? icon(it.icon) : ''}<h3>${esc(it.title)}</h3><p>${it.text}</p></li>`).join('')}</ol>`;
+  else body = `<div class="grid deal-grid">${items.map(it => tag(it, 'deal',
+    `<span class="deal-top">${icon(it.icon || 'tag')}${it.badge ? `<span class="deal-badge">${esc(it.badge)}</span>` : ''}</span><h3>${esc(it.title)}</h3><p>${esc(it.text)}</p>${it.href ? `<span class="cta">${esc(it.cta || 'Explore')} →</span>` : ''}`)).join('')}</div>`;
+  const head = b.title ? `<div class="block-head"><h2>${esc(b.title)}</h2>${b.intro ? `<p>${b.intro}</p>` : ''}${b.more ? `<a class="block-more" href="${esc(itemHref(b.more))}">${esc(b.more.title)} →</a>` : ''}</div>` : '';
+  return `<section class="blocks blocks-${esc(b.type || 'deals')}"><div class="wrap">${head}${body}</div></section>`;
+}
+const blocks = (p, top) => (p.blocks || []).filter(b => (b.position === 'top') === top).map(block).join('\n');
+
 function partnerBlock(p) {
   const src = p.slug || 'home';
   const offers = (site.offers || []).filter(o => !o.pages || o.pages.includes(p.slug));
@@ -296,7 +345,8 @@ const written = [];
 const out = (rel, text) => { const f = path.join(ROOT, rel); fs.mkdirSync(path.dirname(f), { recursive: true }); fs.writeFileSync(f, text); written.push(rel); };
 
 for (const p of pages) {
-  const main = [breadcrumbHtml(p), hero(p), postList(p), highlights(p), partnerBlock(p), sections(p), faqs(p), sources(p), related(p), bottomCta(p)].join('\n');
+  const top = blocks(p, true), mid = blocks(p, false);
+  const main = [breadcrumbHtml(p), hero(p) + (top && '\n' + top), postList(p), highlights(p) + (mid && '\n' + mid), partnerBlock(p), sections(p), faqs(p), sources(p), related(p), bottomCta(p)].join('\n');
   out(p.slug ? `${p.slug}/index.html` : 'index.html', render(p, main));
 }
 
