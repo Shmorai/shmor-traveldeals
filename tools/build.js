@@ -249,6 +249,8 @@ function highlights(p) {
    specs (spec-sheet cards: item "mono", "kind", "specs": [[label, value]], "url" official site, "link" referral slug, "tag";
    block "tabs": [{ id, label }] adds filter buttons over the items by "tag"), meters (item "value" 0-100 + "valueLabel"),
    html (block "html": raw HTML). Any block can add "class" (extra CSS class on its section).
+   Site-specific block types: if tools/blocks.js exists it exports { typeName: (block, page, kit) => html }
+   (kit = helpers: esc, icon, pagePath, bySlug, goHref, LINKS, AFF, site, imgSrc, imgOf, errors).
    Item: { title, text, badge, icon (name below), slug | href | q, image (defaults to the linked page's), cta }. */
 const ICONS = {
   scale: ['m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z', 'm2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z', 'M7 21h10', 'M12 3v18', 'M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2'],
@@ -332,8 +334,10 @@ function specCard(it, src) {
   ${foot ? `<div class="spec-foot">${foot}</div>` : ''}</article>`;
 }
 
+const CUSTOM = fs.existsSync(path.join(__dirname, 'blocks.js')) ? require('./blocks.js') : {};
 function block(b, p = {}) {
   if (b.type === 'people') return peopleBlock(b);
+  if (CUSTOM[b.type]) return CUSTOM[b.type](b, p, { esc, icon, pagePath, bySlug, goHref, LINKS, AFF, site, imgSrc, imgOf, errors });
   for (const it of b.items || []) if (it.link && !LINKS[it.link]) errors.push(`${p._file}: block item link "${it.link}" isn't in shmor-site.json "links"`);
   const items = (b.items || []).map(it => {
     const page = it.slug !== undefined ? bySlug.get(it.slug) : null;
