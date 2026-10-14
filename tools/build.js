@@ -245,7 +245,10 @@ function highlights(p) {
 }
 
 /* Extra card sections from a page's "blocks": [{ type, title, intro, position: "top", items: [...] }].
-   Types: strip (trust bar), deals (icon cards), tiles (photo mosaic), steps (numbered), links (pill links), people (profiles).
+   Types: strip (trust bar), deals (icon cards), tiles (photo mosaic), steps (numbered), links (pill links), people (profiles),
+   specs (spec-sheet cards: item "mono", "kind", "specs": [[label, value]], "url" official site, "link" referral slug, "tag";
+   block "tabs": [{ id, label }] adds filter buttons over the items by "tag"), meters (item "value" 0-100 + "valueLabel"),
+   html (block "html": raw HTML). Any block can add "class" (extra CSS class on its section).
    Item: { title, text, badge, icon (name below), slug | href | q, image (defaults to the linked page's), cta }. */
 const ICONS = {
   scale: ['m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z', 'm2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z', 'M7 21h10', 'M12 3v18', 'M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2'],
@@ -284,6 +287,14 @@ const ICONS = {
   check: ['M20 6 9 17l-5-5'],
   droplet: ['M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z'],
   globe: ['c:12,12,10', 'M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20', 'M2 12h20'],
+  wifi: ['M12 20h.01', 'M2 8.82a15 15 0 0 1 20 0', 'M5 12.859a10 10 0 0 1 14 0', 'M8.5 16.429a5 5 0 0 1 7 0'],
+  smartphone: ['M7 2h10a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z', 'M12 18h.01'],
+  phone: ['M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z'],
+  tv: ['M4 7h16a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2z', 'm17 2-5 5-5-5'],
+  signal: ['M2 20h.01', 'M7 20v-4', 'M12 20v-8', 'M17 20V8', 'M22 4v16'],
+  zap: ['M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z'],
+  gauge: ['m12 14 4-4', 'M3.34 19a10 10 0 1 1 17.32 0'],
+  dish: ['M4 10a7.31 7.31 0 0 0 10 10Z', 'm9 15 3-3', 'M17 13a6 6 0 0 0-6-6', 'M21 13A10 10 0 0 0 11 3'],
 };
 const icon = name => !ICONS[name] ? '' : `<svg class="ico" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICONS[name].map(d =>
   d.startsWith('c:') ? (([cx, cy, r]) => `<circle cx="${cx}" cy="${cy}" r="${r}"/>`)(d.slice(2).split(',')) : `<path d="${d}"/>`).join('')}</svg>`;
@@ -310,8 +321,20 @@ function peopleBlock(b) {
   }).join('')}</div></div></section>`;
 }
 
-function block(b) {
+function specCard(it, src) {
+  const host = it.url ? new URL(it.url).hostname.replace(/^www\./, '') : '';
+  const foot = [it.link && LINKS[it.link] ? `<a class="spec-go" href="${goHref(it.link, src)}" ${AFF}>${esc(it.cta || `See ${it.title} plans`)} →</a>` : '',
+    it.href ? `<a class="spec-more" href="${esc(it.href)}">${esc(it.more || 'Read the guide')} →</a>` : '',
+    host ? `<a class="spec-site" href="${esc(it.url)}" rel="nofollow noopener" target="_blank">${esc(host)} ↗</a>` : ''].filter(Boolean).join('');
+  return `<article class="spec"${it.tag ? ` data-tag="${esc(it.tag)}"` : ''}>
+  <div class="spec-head"><span class="spec-chip" aria-hidden="true">${esc(it.mono || it.title.slice(0, 2))}</span><div class="spec-id">${it.kind ? `<p class="spec-kind">${esc(it.kind)}</p>` : ''}<h3>${esc(it.title)}</h3></div>${it.badge ? `<span class="spec-badge">${esc(it.badge)}</span>` : ''}</div>
+  ${it.text ? `<p class="spec-text">${it.text}</p>` : ''}${(it.specs || []).length ? `<dl class="spec-list">${it.specs.map(([k, v]) => `<div><dt>${esc(k)}</dt><dd>${v}</dd></div>`).join('')}</dl>` : ''}
+  ${foot ? `<div class="spec-foot">${foot}</div>` : ''}</article>`;
+}
+
+function block(b, p = {}) {
   if (b.type === 'people') return peopleBlock(b);
+  for (const it of b.items || []) if (it.link && !LINKS[it.link]) errors.push(`${p._file}: block item link "${it.link}" isn't in shmor-site.json "links"`);
   const items = (b.items || []).map(it => {
     const page = it.slug !== undefined ? bySlug.get(it.slug) : null;
     if (it.slug !== undefined && !page) console.warn(`  ! block item links to missing page "${it.slug}"`);
@@ -323,13 +346,18 @@ function block(b) {
   else if (b.type === 'links') body = `<div class="pill-links">${items.map(it => tag(it, 'pill', `${it.icon ? icon(it.icon) : ''}${esc(it.title)}`)).join('')}</div>`;
   else if (b.type === 'tiles') body = `<div class="tiles">${items.map((it, n) => tag(it, `tile-photo${n === 0 && b.feature !== false ? ' tile-feature' : ''}`,
     `${cardImg({ image: it.image || (it.page && it.page.image) })}<span class="tile-shade"></span><span class="tile-body">${it.badge ? `<span class="tile-badge">${esc(it.badge)}</span>` : ''}<h3>${esc(it.title)}</h3>${it.text ? `<p>${esc(it.text)}</p>` : ''}</span>`)).join('')}</div>`;
+  else if (b.type === 'html') body = b.html || '';
+  else if (b.type === 'specs') body = `${b.tabs?.length ? `<div class="spec-tabs" data-tabs hidden>${[{ id: 'all', label: b.allLabel || 'All' }, ...b.tabs].map((t, n) =>
+    `<button type="button" data-tab="${esc(t.id)}" aria-pressed="${n === 0}">${esc(t.label)}</button>`).join('')}</div>` : ''}<div class="spec-grid">${items.map(it => specCard(it, p.slug)).join('')}</div>`;
+  else if (b.type === 'meters') body = `<div class="meters">${items.map(it => tag(it, 'meter',
+    `<span class="meter-head">${it.icon ? icon(it.icon) : ''}<h3>${esc(it.title)}</h3>${it.valueLabel ? `<span class="meter-val">${esc(it.valueLabel)}</span>` : ''}</span><span class="meter-track" aria-hidden="true"><span style="width:${Math.max(0, Math.min(100, +it.value || 0))}%"></span></span>${it.text ? `<p>${it.text}</p>` : ''}${it.badge ? `<span class="meter-badge">${esc(it.badge)}</span>` : ''}`)).join('')}</div>`;
   else if (b.type === 'steps') body = `<ol class="steps">${items.map(it => `<li>${it.icon ? icon(it.icon) : ''}<h3>${esc(it.title)}</h3><p>${it.text}</p></li>`).join('')}</ol>`;
   else body = `<div class="grid deal-grid">${items.map(it => tag(it, 'deal',
     `<span class="deal-top">${icon(it.icon || 'tag')}${it.badge ? `<span class="deal-badge">${esc(it.badge)}</span>` : ''}</span><h3>${esc(it.title)}</h3><p>${esc(it.text)}</p>${it.href ? `<span class="cta">${esc(it.cta || 'Explore')} →</span>` : ''}`)).join('')}</div>`;
   const head = b.title ? `<div class="block-head"><h2>${esc(b.title)}</h2>${b.intro ? `<p>${b.intro}</p>` : ''}${b.more ? `<a class="block-more" href="${esc(itemHref(b.more))}">${esc(b.more.title)} →</a>` : ''}</div>` : '';
-  return `<section class="blocks blocks-${esc(b.type || 'deals')}"><div class="wrap">${head}${body}</div></section>`;
+  return `<section class="blocks blocks-${esc(b.type || 'deals')}${b.class ? ` ${esc(b.class)}` : ''}"><div class="wrap">${head}${body}</div></section>`;
 }
-const blocks = (p, top) => (p.blocks || []).filter(b => (b.position === 'top') === top).map(block).filter(Boolean).join('\n');
+const blocks = (p, top) => (p.blocks || []).filter(b => (b.position === 'top') === top).map(b => block(b, p)).filter(Boolean).join('\n');
 
 function partnerBlock(p) {
   const src = p.slug || 'home';
@@ -445,5 +473,6 @@ for (const rel of previous) {
     console.log(`  removed old page /${path.dirname(rel)}/`);
   }
 }
+if (errors.length) { console.error('\nBuild problems:\n  ✗ ' + errors.join('\n  ✗ ')); process.exitCode = 1; }
 fs.writeFileSync(MANIFEST, JSON.stringify(written, null, 2));
 console.log(`✓ Built ${NAME}: ${pages.length} pages, sitemap with ${indexable.length} URLs → ${BASE}/`);
