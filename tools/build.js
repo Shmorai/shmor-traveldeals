@@ -22,6 +22,16 @@
    writes an RSS feed at /<blog slug>/feed.xml. A page's "heroHtml" (raw HTML,
    e.g. a finder form) is placed in the hero under the intro. Also writes sitemap.xml, robots.txt,
    404.html, /search/ (noindex) and search-index.json.
+
+   People and bylines (optional): shmor-site.json "people": { id: { name, role,
+   credentials, bio, image, url, registry: { label, url }, sameAs: [] } } lists
+   REAL, verifiable contributors only. Pages can set "writtenBy" / "reviewedBy"
+   (people ids) and "reviewed" ("YYYY-MM-DD"); these show in the post byline and
+   in JSON-LD (author, reviewedBy, lastReviewed). seo.bylines: true adds a byline
+   bar under the hero of every guide page; seo.editorialPage: "<slug>" links it
+   to an editorial standards page; seo.checkedText is shown when no reviewer is
+   set. A "people" block (items: [ids], or all people) renders profile cards
+   with id="person-<id>" anchors, and nothing at all while "people" is empty.
    ===================================================================== */
 const fs = require('fs');
 const path = require('path');
@@ -37,6 +47,8 @@ const BASE = `https://${site.subdomain}.shmor.ai`;
 const MASTER = 'https://shmor.ai';
 const TODAY = new Date().toISOString().slice(0, 10);
 const LINKS = site.links || {};
+const PEOPLE = site.people || {};
+const EDITORIAL = seo.editorialPage || '';
 
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const strip = s => String(s ?? '').replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
@@ -71,6 +83,8 @@ for (const p of pages) {
   seenTitle.set(p.title, id); seenDesc.set(p.description, id);
   for (const r of p.related || []) if (!bySlug.has(r)) errors.push(`${id}: related page "${r}" doesn't exist`);
   for (const l of p.partners || []) if (!LINKS[l]) errors.push(`${id}: partner link "${l}" isn't in shmor-site.json "links"`);
+  for (const k of ['writtenBy', 'reviewedBy']) if (p[k] && !PEOPLE[p[k]]) errors.push(`${id}: ${k} "${p[k]}" isn't in shmor-site.json "people"`);
+  if (p.reviewedBy && !/^\d{4}-\d{2}-\d{2}$/.test(p.reviewed || '')) errors.push(`${id}: "reviewedBy" needs "reviewed": "YYYY-MM-DD"`);
   if (p.type === 'post' && !/^\d{4}-\d{2}-\d{2}$/.test(p.date || '')) errors.push(`${id}: posts need "date": "YYYY-MM-DD"`);
   if (p.image && typeof p.image === 'object' && !p.image.src) errors.push(`${id}: "image" needs a "src"`);
   if (p.image && typeof p.image === 'object' && !p.image.alt) warnings.push(`${id}: "image" has no "alt" text`);
@@ -91,6 +105,15 @@ const pagePath = p => `/${p.slug ? p.slug + '/' : ''}`;
 const label = p => p.nav || p.short || p.h1;
 const goHref = (slug, src) => `${MASTER}/go/?to=${encodeURIComponent(slug)}&src=${encodeURIComponent(`${site.id}-${(src || 'home').replace(/\//g, '-')}`)}`;
 const AFF = 'rel="sponsored nofollow noopener" target="_blank"';
+
+// People: profile link (editorial page anchor, else their own url), schema.org Person, byline parts
+const personHref = id => EDITORIAL ? `/${EDITORIAL}/#person-${id}` : PEOPLE[id].url || '';
+const person = id => { const x = PEOPLE[id]; const url = EDITORIAL ? `${BASE}/${EDITORIAL}/#person-${id}` : x.url;
+  return { '@type': 'Person', name: x.name, ...(x.role ? { jobTitle: x.role } : {}), ...(x.credentials ? { description: x.credentials } : {}),
+    ...(url ? { url } : {}), ...((x.sameAs || []).length ? { sameAs: x.sameAs } : {}) }; };
+const personLink = id => personHref(id) ? `<a href="${esc(personHref(id))}">${esc(PEOPLE[id].name)}</a>` : esc(PEOPLE[id].name);
+const byWho = p => p.writtenBy ? personLink(p.writtenBy) : `the ${esc(NAME)} editorial team`;
+const reviewedHtml = p => `Reviewed by ${personLink(p.reviewedBy)}${PEOPLE[p.reviewedBy].credentials ? `, ${esc(PEOPLE[p.reviewedBy].credentials)}` : ''}, <time datetime="${p.reviewed}">${fmtDate(p.reviewed)}</time>`;
 
 // Photos. A page's "image" is a path ("/assets/img/x.jpg") or { "src", "alt", "credit", "creditUrl" }.
 // Unsplash URLs (images.unsplash.com) are resized and cropped by their CDN; other files are used as they are.
@@ -130,13 +153,14 @@ function head(p, { noindex = false, canonical = true } = {}) {
       parentOrganization: { '@type': 'Organization', name: 'Shmor.ai', url: `${MASTER}/` } });
   }
   graph.push({ '@type': 'WebPage', '@id': `${url}#page`, url, name: p.title, description: p.description,
-    isPartOf: { '@id': `${BASE}/#website` }, dateModified: p.updated || TODAY, inLanguage: seo.locale || 'en' });
+    isPartOf: { '@id': `${BASE}/#website` }, dateModified: p.updated || TODAY, inLanguage: seo.locale || 'en',
+    ...(p.reviewedBy ? { reviewedBy: person(p.reviewedBy), lastReviewed: p.reviewed } : {}) });
   const bc = crumbs(p);
   if (bc.length) graph.push({ '@type': 'BreadcrumbList', itemListElement: bc.map((c, i) => ({ '@type': 'ListItem', position: i + 1, name: c.name, item: c.url })) });
   if (p.type === 'post') graph.push({ '@type': 'BlogPosting', '@id': `${url}#post`, mainEntityOfPage: { '@id': `${url}#page` },
     headline: p.h1, description: p.description, datePublished: p.date, dateModified: p.updated || p.date, inLanguage: seo.locale || 'en',
     ...(img ? { image: img } : {}), ...(p.keywords?.length ? { keywords: p.keywords.join(', ') } : {}),
-    author: { '@type': 'Organization', name: `${NAME} editorial team`, url: `${BASE}/` },
+    author: p.writtenBy ? person(p.writtenBy) : { '@type': 'Organization', name: `${NAME} editorial team`, url: `${BASE}/` },
     publisher: { '@type': 'Organization', name: NAME, url: `${BASE}/`, ...(seo.logo ? { logo: { '@type': 'ImageObject', url: `${BASE}${seo.logo}` } } : {}) } });
   if (p.type === 'blog') graph.push({ '@type': 'Blog', '@id': `${url}#blog`, url, name: p.h1, description: p.description,
     blogPost: posts.slice(0, 20).map(x => ({ '@type': 'BlogPosting', headline: x.h1, url: pageUrl(x), datePublished: x.date })) });
@@ -184,7 +208,7 @@ function hero(p) {
   ${p.eyebrow ? `<p class="eyebrow">${esc(p.eyebrow)}</p>` : ''}
   <h1>${p.h1Html || esc(p.h1)}</h1>
   ${p.intro ? `<p class="lede">${p.intro}</p>` : ''}${p.heroHtml || ''}
-  ${p.type === 'post' ? `<p class="post-byline">By the ${esc(NAME)} editorial team · <time datetime="${p.date}">${fmtDate(p.date)}</time>${p.updated && p.updated !== p.date ? ` · Updated <time datetime="${p.updated}">${fmtDate(p.updated)}</time>` : ''} · ${readMins(p)} min read</p>` : ''}
+  ${p.type === 'post' ? `<p class="post-byline">By ${byWho(p)}${p.reviewedBy ? ` · ${reviewedHtml(p)}` : ''} · <time datetime="${p.date}">${fmtDate(p.date)}</time>${p.updated && p.updated !== p.date ? ` · Updated <time datetime="${p.updated}">${fmtDate(p.updated)}</time>` : ''} · ${readMins(p)} min read</p>` : ''}
   ${p.search === false || (p.type === 'post' && p.search !== true) ? '' : searchForm(p.searchPlaceholder)}
   ${p.chips?.length ? `<div class="chips">${p.chips.map(c => `<a href="${c.slug !== undefined ? pagePath(bySlug.get(c.slug) || { slug: c.slug }) : `/search/?q=${encodeURIComponent(c.q)}`}">${esc(c.label)}</a>`).join('')}</div>` : ''}
 </div>${p.slug ? '' : '<div class="hero-art" aria-hidden="true"></div>'}${credit(i)}</section>`;
@@ -221,7 +245,7 @@ function highlights(p) {
 }
 
 /* Extra card sections from a page's "blocks": [{ type, title, intro, position: "top", items: [...] }].
-   Types: strip (trust bar), deals (icon cards), tiles (photo mosaic), steps (numbered), links (pill links).
+   Types: strip (trust bar), deals (icon cards), tiles (photo mosaic), steps (numbered), links (pill links), people (profiles).
    Item: { title, text, badge, icon (name below), slug | href | q, image (defaults to the linked page's), cta }. */
 const ICONS = {
   scale: ['m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z', 'm2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z', 'M7 21h10', 'M12 3v18', 'M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2'],
@@ -265,7 +289,29 @@ const icon = name => !ICONS[name] ? '' : `<svg class="ico" width="22" height="22
   d.startsWith('c:') ? (([cx, cy, r]) => `<circle cx="${cx}" cy="${cy}" r="${r}"/>`)(d.slice(2).split(',')) : `<path d="${d}"/>`).join('')}</svg>`;
 const itemHref = it => it.href || (it.slug !== undefined ? pagePath(bySlug.get(it.slug) || { slug: it.slug }) : it.q ? `/search/?q=${encodeURIComponent(it.q)}` : '');
 
+// Guide byline bar (seo.bylines): who wrote it, legal review or fact-check note, date, editorial standards link
+function byline(p) {
+  if (!seo.bylines || !p.slug || p.type === 'post' || p.type === 'blog' || p.byline === false || p.slug === EDITORIAL) return '';
+  const parts = [`Written by ${byWho(p)}`];
+  if (p.reviewedBy) parts.push(reviewedHtml(p));
+  else if (seo.checkedText) parts.push(esc(seo.checkedText));
+  if (p.updated) parts.push(`Updated <time datetime="${p.updated}">${fmtDate(p.updated)}</time>`);
+  if (EDITORIAL && bySlug.has(EDITORIAL)) parts.push(`<a href="/${EDITORIAL}/">${esc(seo.editorialLinkText || 'Editorial standards')}</a>`);
+  return `\n<div class="byline${p.reviewedBy ? ' is-reviewed' : ''}"><div class="wrap">${icon(p.reviewedBy ? 'check' : 'file')}<p>${parts.join(' <span class="sep" aria-hidden="true">·</span> ')}</p></div></div>`;
+}
+
+function peopleBlock(b) {
+  const ids = (b.items || Object.keys(PEOPLE)).filter(i => PEOPLE[i]);
+  if (!ids.length) return '';
+  const head = b.title ? `<div class="block-head"><h2>${esc(b.title)}</h2>${b.intro ? `<p>${b.intro}</p>` : ''}</div>` : '';
+  return `<section class="blocks blocks-people"><div class="wrap">${head}<div class="grid people">${ids.map(i => {
+    const x = PEOPLE[i], im = imgOf(x.image);
+    return `<article class="person" id="person-${esc(i)}">${im ? `<img class="person-img" src="${esc(imgSrc(im, 240, 240))}" width="120" height="120" alt="${esc(im.alt || x.name)}" loading="lazy">` : ''}<h3>${esc(x.name)}</h3>${x.role ? `<p class="person-role">${esc(x.role)}</p>` : ''}${x.credentials ? `<p class="person-cred">${esc(x.credentials)}</p>` : ''}${x.bio ? `<p class="person-bio">${x.bio}</p>` : ''}${x.registry?.url ? `<p class="person-reg"><a href="${esc(x.registry.url)}" rel="noopener" target="_blank">${esc(x.registry.label || 'Check registration')}</a></p>` : ''}${(x.sameAs || []).length ? `<p class="person-links">${x.sameAs.map(u => `<a href="${esc(u)}" rel="noopener me" target="_blank">${esc(new URL(u).hostname.replace(/^www\./, ''))}</a>`).join(' · ')}</p>` : ''}</article>`;
+  }).join('')}</div></div></section>`;
+}
+
 function block(b) {
+  if (b.type === 'people') return peopleBlock(b);
   const items = (b.items || []).map(it => {
     const page = it.slug !== undefined ? bySlug.get(it.slug) : null;
     if (it.slug !== undefined && !page) console.warn(`  ! block item links to missing page "${it.slug}"`);
@@ -283,7 +329,7 @@ function block(b) {
   const head = b.title ? `<div class="block-head"><h2>${esc(b.title)}</h2>${b.intro ? `<p>${b.intro}</p>` : ''}${b.more ? `<a class="block-more" href="${esc(itemHref(b.more))}">${esc(b.more.title)} →</a>` : ''}</div>` : '';
   return `<section class="blocks blocks-${esc(b.type || 'deals')}"><div class="wrap">${head}${body}</div></section>`;
 }
-const blocks = (p, top) => (p.blocks || []).filter(b => (b.position === 'top') === top).map(block).join('\n');
+const blocks = (p, top) => (p.blocks || []).filter(b => (b.position === 'top') === top).map(block).filter(Boolean).join('\n');
 
 function partnerBlock(p) {
   const src = p.slug || 'home';
@@ -363,7 +409,7 @@ const out = (rel, text) => { const f = path.join(ROOT, rel); fs.mkdirSync(path.d
 
 for (const p of pages) {
   const top = blocks(p, true), mid = blocks(p, false);
-  const main = [breadcrumbHtml(p), hero(p) + (top && '\n' + top), postList(p), highlights(p) + (mid && '\n' + mid), partnerBlock(p), sections(p), faqs(p), sources(p), related(p), bottomCta(p)].join('\n');
+  const main = [breadcrumbHtml(p), hero(p) + byline(p) + (top && '\n' + top), postList(p), highlights(p) + (mid && '\n' + mid), partnerBlock(p), sections(p), faqs(p), sources(p), related(p), bottomCta(p)].join('\n');
   out(p.slug ? `${p.slug}/index.html` : 'index.html', render(p, main));
 }
 
