@@ -364,3 +364,12 @@ section h2 { font-size: clamp(24px, 3vw, 30px); margin-bottom: 20px; }
 /* Stronger overlay behind page-banner text so it stays readable on bright photos */
 .hero-page.has-img::after { background: linear-gradient(90deg, rgba(8,20,36,.82) 0%, rgba(8,20,36,.62) 55%, rgba(8,20,36,.35) 100%); }
 @media (max-width: 640px) { .hero-page.has-img::after { background: rgba(8,20,36,.7); } }
+
+/* Menu folds into the menu button when it doesn't fit (set by site.js) */
+.nav-compact .menu { display: block; }
+.nav-compact .nav { display: none; position: absolute; left: 0; right: 0; top: 100%; flex-direction: column; gap: 0; background: var(--surface); border-bottom: 1px solid var(--line); padding: 8px 20px 16px; box-shadow: 0 12px 30px rgba(0,0,0,.18); z-index: 60; }
+.nav-compact .nav.open { display: flex; }
+.nav-compact .nav a { padding: 12px 0; border-bottom: 1px solid var(--line); }
+
+/* Let article columns shrink so wide tables scroll inside their box instead of widening the page */
+.content-grid > * { min-width: 0; }
