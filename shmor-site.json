@@ -4,7 +4,7 @@
   "name": "TravelDeals",
   "subdomain": "traveldeals",
   "order": 10,
-  "status": "building",
+  "status": "live",
   "icon": "plane",
   "accent": "#FF6B4A",
   "blurb": "Holiday deals, flights, hotels and city breaks compared across trusted travel brands.",
