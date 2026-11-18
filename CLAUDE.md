@@ -1,6 +1,6 @@
 # TravelDeals (traveldeals.shmor.ai)
 
-A Shmor marketplace (shared rules in `../../CLAUDE.md`): its own brand, design and SEO. Compares holiday deals, flights, hotels and city breaks for US, UK and EU travellers. Repo: `Shmorai/shmor-traveldeals` (private until launch). Status: **building**, with no referral links yet.
+A Shmor marketplace (shared rules in `../../CLAUDE.md`): its own brand, design and SEO. Compares holiday deals, flights, hotels and city breaks for US, UK and EU travellers. Repo: `Shmorai/shmor-traveldeals` (private until launch). Status: **live**, with TravelUp (CJ) referral links (see "Affiliate partners").
 
 ## Where things are
 | What | Where |
@@ -51,5 +51,10 @@ After changing `shmor-site.json` (links, keywords, card), also run `node tools/s
 - **Status:** pre-launch. Backed up to the **private** repo `Shmorai/shmor-traveldeals` (created 2026-10-13, branch `main`). Pages off, not public, no DNS. Push after commits; going public only when the user says launch.
 - **Chat setup:** this site has its own pinned chat titled "TravelDeals". The master/network chat is pinned separately.
 
+## Affiliate partners (live)
+- **TravelUp** (CJ advertiser 6248437, joined; 2026-11-18). UK travel agent: flights £8–15 per booking, hotels 4%, packages 3%; 45-day cookie; locks after 90 days. Terms: no "TravelUp" in our URLs/slugs (so slugs are `cj6248437-*`), only CJ-supplied images, only programme-issued codes, no "official site" claims, no brand bidding.
+- All codes generated in CJ for the **TravelDeals website property (PID 101926854)**. Links in `shmor-site.json`: homepage/flights/hotels/holidays/Florida deep links, evergreen text link, 6 banners (728x90 + 300x250 pairs; images self-hosted in `assets/img/partners/` because CJ's image URLs redirect to http and break in Chrome), Paris (TU30) and Gran Canaria (HOTEL20) offers. Dated items `expires: 2026-12-31` with `then` fallbacks.
+- Placements use build tokens `[[link:]]`, `[[button:]]`, `[[banner:]]` in pages and 6 blog posts (see the shmor-network skill, section B2).
+
 ## Ideas / next
-Referral links from travel programmes · a social share image (1200×630, set `seo.image`) · more destination pages (Tenerife, Lanzarote, Dubai, Cancún, Greece, Turkey) · US "vacation" pages.
+More travel programmes (Oojo, HopeGoo, Air India are joined in CJ) · a social share image (1200×630, set `seo.image`) · more destination pages (Tenerife, Lanzarote, Dubai, Cancún, Greece, Turkey) · US "vacation" pages.
