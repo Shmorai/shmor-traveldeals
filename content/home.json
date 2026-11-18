@@ -100,9 +100,10 @@
   "latestPosts": 3,
   "latestTitle": "Latest travel news and guides",
   "partners": [
-    "cj6248437-home"
+    "cj6248437-home",
+    "cj6880275-home"
   ],
-  "partnersTitle": "Search and book with our travel partner",
+  "partnersTitle": "Search and book with our travel partners",
   "blocks": [
     {
       "type": "banner",

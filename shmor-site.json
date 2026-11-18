@@ -130,6 +130,36 @@
         "blog/winter-sun-destinations"
       ],
       "expires": "2026-12-31"
+    },
+    {
+      "title": "US last-minute flights: save up to $30 with code LASTMINUTE30",
+      "link": "cj6880275-lastmin",
+      "badge": "Code LASTMINUTE30",
+      "terms": "OVAGO offer (“up to $30 off*”). Prices in US dollars; check the full terms on OVAGO before you book.",
+      "pages": [
+        "last-minute-holidays"
+      ]
+    },
+    {
+      "title": "International flights: save up to $30 with code INTERNATIONAL30",
+      "link": "cj6880275-intl",
+      "badge": "Code INTERNATIONAL30",
+      "terms": "OVAGO offer (“up to $30 off*”). Prices in US dollars; check the full terms on OVAGO before you book.",
+      "pages": [
+        "blog/uk-eta-guide",
+        "blog/ees-etias-europe-entry-rules"
+      ]
+    },
+    {
+      "title": "Black Friday flight deals: save up to $50 with code BLACKFRIDAY50",
+      "link": "cj6880275-blackfriday",
+      "badge": "Code BLACKFRIDAY50",
+      "terms": "OVAGO offer (“save up to $50*”). Prices in US dollars. Listed until 30 Nov 2026; check the full terms on OVAGO before you book.",
+      "pages": [
+        "",
+        "cheap-flights"
+      ],
+      "expires": "2026-11-30"
     }
   ],
   "links": {
@@ -260,6 +290,86 @@
         "height": 90,
         "alt": "TravelUp holiday deals",
         "cjSrc": "https://www.ftjcfx.com/image-101926854-15859875"
+      }
+    },
+    "cj6880275-home": {
+      "merchant": "OVAGO",
+      "network": "cj",
+      "url": "https://www.tkqlhce.com/click-101926854-15807941",
+      "blurb": "Search domestic and international flights with OVAGO. A US flight search and booking site; prices in $."
+    },
+    "cj6880275-search": {
+      "merchant": "OVAGO",
+      "network": "cj",
+      "url": "https://www.anrdoezrs.net/click-101926854-15796145",
+      "blurb": "Search cheap flights with OVAGO. A US flight search and booking site; prices in $."
+    },
+    "cj6880275-lastmin": {
+      "merchant": "OVAGO",
+      "network": "cj",
+      "url": "https://www.kqzyfj.com/click-101926854-15821121",
+      "blurb": "Last-minute flight deals at OVAGO. A US flight search and booking site; prices in $."
+    },
+    "cj6880275-intl": {
+      "merchant": "OVAGO",
+      "network": "cj",
+      "url": "https://www.kqzyfj.com/click-101926854-15832485",
+      "blurb": "International flight deals at OVAGO. A US flight search and booking site; prices in $."
+    },
+    "cj6880275-blackfriday": {
+      "merchant": "OVAGO",
+      "network": "cj",
+      "url": "https://www.dpbolvw.net/click-101926854-16971121",
+      "expires": "2026-11-30",
+      "then": "cj6880275-home",
+      "blurb": "OVAGO Black Friday flight deals."
+    },
+    "cj6880275-b-cheap-728": {
+      "merchant": "OVAGO",
+      "network": "cj",
+      "url": "https://www.tkqlhce.com/click-101926854-15820952",
+      "banner": {
+        "src": "/assets/img/partners/cj6880275-b-cheap-728.jpg",
+        "cjSrc": "https://www.lduhtrp.net/image-101926854-15820952",
+        "width": 728,
+        "height": 90,
+        "alt": "OVAGO cheap flights, domestic and international: up to $30 off with code CHEAPFLIGHTS30"
+      }
+    },
+    "cj6880275-b-cheap-300": {
+      "merchant": "OVAGO",
+      "network": "cj",
+      "url": "https://www.tkqlhce.com/click-101926854-15820959",
+      "banner": {
+        "src": "/assets/img/partners/cj6880275-b-cheap-300.jpg",
+        "cjSrc": "https://www.tqlkg.com/image-101926854-15820959",
+        "width": 300,
+        "height": 250,
+        "alt": "OVAGO cheap flights, domestic and international: up to $30 off with code CHEAPFLIGHTS30"
+      }
+    },
+    "cj6880275-b-lastmin-728": {
+      "merchant": "OVAGO",
+      "network": "cj",
+      "url": "https://www.kqzyfj.com/click-101926854-15821114",
+      "banner": {
+        "src": "/assets/img/partners/cj6880275-b-lastmin-728.jpg",
+        "cjSrc": "https://www.ftjcfx.com/image-101926854-15821114",
+        "width": 728,
+        "height": 90,
+        "alt": "OVAGO last-minute flight deals: up to $30 off with code LASTMINUTE30"
+      }
+    },
+    "cj6880275-b-lastmin-300": {
+      "merchant": "OVAGO",
+      "network": "cj",
+      "url": "https://www.kqzyfj.com/click-101926854-15821119",
+      "banner": {
+        "src": "/assets/img/partners/cj6880275-b-lastmin-300.jpg",
+        "cjSrc": "https://www.awltovhc.com/image-101926854-15821119",
+        "width": 300,
+        "height": 250,
+        "alt": "OVAGO last-minute flight deals: up to $30 off with code LASTMINUTE30"
       }
     }
   },

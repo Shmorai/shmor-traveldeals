@@ -29,7 +29,7 @@
     },
     {
       "h2": "When to look",
-      "html": "<ul><li><strong>Off-peak periods</strong> usually have the most late availability.</li>\n<li><strong>School holidays and major events</strong> rarely have bargains at the last minute. Book these early.</li>\n<li><strong>Midweek departures</strong> are often cheaper than weekend ones.</li></ul>"
+      "html": "<ul><li><strong>Off-peak periods</strong> usually have the most late availability.</li>\n<li><strong>School holidays and major events</strong> rarely have bargains at the last minute. Book these early.</li>\n<li><strong>Midweek departures</strong> are often cheaper than weekend ones.</li></ul>\n[[banner:cj6880275-b-lastmin-728|cj6880275-b-lastmin-300]]"
     },
     {
       "h2": "Checklist before you book at short notice",
@@ -37,7 +37,7 @@
     },
     {
       "h2": "Search smart for late deals",
-      "html": "<p>Start with your travel dates and budget rather than a fixed destination, then compare what’s available. <a href=\"/package-holidays/\">Package holidays</a> often have the strongest late offers, because operators can discount flights and hotels together. Booking separately via <a href=\"/cheap-flights/\">cheap flights</a> and <a href=\"/hotel-deals/\">hotel deals</a> gives you more control.</p>\n<p>For short-notice trips, compare [[link:cj6248437-flights|flights]] and [[link:cj6248437-holidays|holiday packages]] side by side at TravelUp before you commit.</p>"
+      "html": "<p>Start with your travel dates and budget rather than a fixed destination, then compare what’s available. <a href=\"/package-holidays/\">Package holidays</a> often have the strongest late offers, because operators can discount flights and hotels together. Booking separately via <a href=\"/cheap-flights/\">cheap flights</a> and <a href=\"/hotel-deals/\">hotel deals</a> gives you more control.</p>\n<p>For short-notice trips, compare [[link:cj6248437-flights|flights]] and [[link:cj6248437-holidays|holiday packages]] side by side at TravelUp before you commit.</p>\n[[button:cj6880275-lastmin|Search last-minute US flights with OVAGO]]"
     }
   ],
   "faqs": [
@@ -62,7 +62,8 @@
   ],
   "partners": [
     "cj6248437-holidays",
-    "cj6248437-flights"
+    "cj6248437-flights",
+    "cj6880275-lastmin"
   ],
-  "partnersTitle": "Search and book with our travel partner"
+  "partnersTitle": "Search and book with our travel partners"
 }

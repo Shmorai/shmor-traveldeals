@@ -37,7 +37,7 @@
     },
     {
       "h2": "Booking direct or through a booking site",
-      "html": "<p>Comparison and booking sites help you see many airlines at once. Booking direct with the airline can make changes and refunds simpler. Whichever you choose, check who you’re paying and whose terms apply. If you want a hotel too, compare against a <a href=\"/package-holidays/\">package</a>.</p>\n<p>Online travel agents such as [[link:cj6248437-flights|TravelUp]] show fares from many airlines in one search, which makes it quick to compare dates and routes before you decide where to book.</p>"
+      "html": "<p>Comparison and booking sites help you see many airlines at once. Booking direct with the airline can make changes and refunds simpler. Whichever you choose, check who you’re paying and whose terms apply. If you want a hotel too, compare against a <a href=\"/package-holidays/\">package</a>.</p>\n<p>Online travel agents such as [[link:cj6248437-flights|TravelUp]] show fares from many airlines in one search, which makes it quick to compare dates and routes before you decide where to book.</p>\n<p>Flying from the US? [[link:cj6880275-search|OVAGO]] searches domestic and international fares in US dollars.</p>"
     }
   ],
   "faqs": [
@@ -62,7 +62,8 @@
     "blog/uk-airport-liquids-rule-100ml-2-litres"
   ],
   "partners": [
-    "cj6248437-flights"
+    "cj6248437-flights",
+    "cj6880275-search"
   ],
-  "partnersTitle": "Search and book with our travel partner"
+  "partnersTitle": "Search and book with our travel partners"
 }
