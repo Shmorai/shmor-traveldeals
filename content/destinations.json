@@ -25,11 +25,11 @@
   "sections": [
     {
       "h2": "Destination guides",
-      "html": "<ul><li><a href=\"/destinations/canary-islands/\">Canary Islands</a>: year-round sunshine, volcanic landscapes and great-value <a href=\"/all-inclusive-holidays/\">all-inclusive</a> options.</li>\n<li><a href=\"/destinations/orlando/\">Orlando</a>: the world’s theme park capital, perfect for <a href=\"/family-holidays/\">family holidays</a>.</li></ul>\n<p>We’re adding new destination guides regularly.</p>"
+      "html": "<ul><li><a href=\"/destinations/canary-islands/\">Canary Islands</a>: year-round sunshine, volcanic landscapes and great-value <a href=\"/all-inclusive-holidays/\">all-inclusive</a> options.</li>\n<li><a href=\"/destinations/orlando/\">Orlando</a>: the world’s theme park capital, perfect for <a href=\"/family-holidays/\">family holidays</a>.</li></ul>\n<p>We’re adding new destination guides regularly.</p>\n[[banner:cj6868393-b-italy-350]]"
     },
     {
       "h2": "Choosing where to go",
-      "html": "<p>Start with when you can travel and how far you want to fly, then think about what kind of trip you want: beach, city, adventure or theme parks. Our <a href=\"/city-breaks/\">city breaks</a> page has ideas for short trips, and <a href=\"/last-minute-holidays/\">last-minute holidays</a> can help if you’re flexible.</p>"
+      "html": "<p>Start with when you can travel and how far you want to fly, then think about what kind of trip you want: beach, city, adventure or theme parks. Our <a href=\"/city-breaks/\">city breaks</a> page has ideas for short trips, and <a href=\"/last-minute-holidays/\">last-minute holidays</a> can help if you’re flexible.</p>\n<p>Once you’ve picked somewhere, compare fares: [[link:cj6868393-generic|Oojo]] is one of the flight booking sites we work with.</p>"
     }
   ],
   "related": [
@@ -38,5 +38,9 @@
     "city-breaks",
     "blog/winter-sun-destinations",
     "blog/christmas-market-city-breaks"
-  ]
+  ],
+  "partners": [
+    "cj6868393-generic"
+  ],
+  "partnersTitle": "Search and book with our travel partners"
 }

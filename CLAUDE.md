@@ -60,5 +60,8 @@ After changing `shmor-site.json` (links, keywords, card), also run `node tools/s
 - Codes for TravelDeals (PID 101926854): evergreen/home, search, last-minute, international, Black Friday (expires 2026-11-30 → then home). Banners (self-hosted JPGs): "Cheap Flights" 728x90 + 300x250 (code CHEAPFLIGHTS30), "Last-Minute Flight Deals" 728x90 + 300x250 (LASTMINUTE30). Offers: LASTMINUTE30 (last-minute page), INTERNATIONAL30 (UK ETA + EES/ETIAS posts), BLACKFRIDAY50 (home + cheap-flights, until 30 Nov).
 - Placed as the US option next to TravelUp: cards on home, cheap-flights, last-minute, Orlando; last-minute banner + button; links on cheap-flights, city-breaks (US), Orlando, winter-sun / UK ETA / EES posts; cheap-flights banner on the UK ETA post. Partner box heading is now "Search and book with our travel partners".
 
+- **Oojo** (CJ advertiser 6868393, joined; added 2026-11-18). Online flight booking (Traveltech SIA, Latvia; serves US/UK/CA/DE). $15 per booking not cancelled within the month; 45-day cookie; no brand bidding; programme/public codes allowed. Codes for TravelDeals (PID 101926854): `cj6868393-newuser` (US/CAN link 15789169, UK link 15789174 → oojo.com/en-GB), generic, concierge, Italy banner 350x250 (self-hosted). Not used: "Rated 4.8/5" text (unverifiable rating), Black Friday and tall banners.
+- Placed: "$50 off your first flight booking" offer card (home, cheap-flights), Italy banner + link + card on /destinations/, links on family-holidays and city-breaks.
+
 ## Ideas / next
-More travel programmes (Oojo, HopeGoo, Air India are joined in CJ) · a social share image (1200×630, set `seo.image`) · more destination pages (Tenerife, Lanzarote, Dubai, Cancún, Greece, Turkey) · US "vacation" pages.
+More travel programmes (HopeGoo, Air India are joined in CJ) · a social share image (1200×630, set `seo.image`) · more destination pages (Tenerife, Lanzarote, Dubai, Cancún, Greece, Turkey) · US "vacation" pages.
