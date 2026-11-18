@@ -25,11 +25,11 @@
   "sections": [
     {
       "h2": "How to find cheaper flights",
-      "html": "<ul><li><strong>Flex your dates.</strong> Flying a day earlier or later, or midweek, can lower the fare.</li>\n<li><strong>Try nearby airports</strong> at both ends of your trip.</li>\n<li><strong>Compare one-way combinations.</strong> Two one-way tickets, even on different airlines, are sometimes cheaper than a return.</li>\n<li><strong>Set price alerts</strong> for routes you’re watching rather than checking every day.</li>\n<li><strong>Book peak dates early.</strong> Holiday periods rarely get cheaper closer to departure.</li></ul>"
+      "html": "<ul><li><strong>Flex your dates.</strong> Flying a day earlier or later, or midweek, can lower the fare.</li>\n<li><strong>Try nearby airports</strong> at both ends of your trip.</li>\n<li><strong>Compare one-way combinations.</strong> Two one-way tickets, even on different airlines, are sometimes cheaper than a return.</li>\n<li><strong>Set price alerts</strong> for routes you’re watching rather than checking every day.</li>\n<li><strong>Book peak dates early.</strong> Holiday periods rarely get cheaper closer to departure.</li></ul>\n[[button:cj6248437-flights|Search flights at TravelUp]]"
     },
     {
       "h2": "Watch out for extra fees",
-      "html": "<p>The cheapest headline fare isn’t always the cheapest trip. Add up what you actually need: checked bags, cabin bags, seat selection, priority boarding, payment fees and airport check-in charges. A slightly higher fare that includes a bag can easily cost less overall.</p>"
+      "html": "<p>The cheapest headline fare isn’t always the cheapest trip. Add up what you actually need: checked bags, cabin bags, seat selection, priority boarding, payment fees and airport check-in charges. A slightly higher fare that includes a bag can easily cost less overall.</p>\n[[banner:cj6248437-b-flights-728|cj6248437-b-flights-300]]"
     },
     {
       "h2": "Budget or full-service airline?",
@@ -37,7 +37,7 @@
     },
     {
       "h2": "Booking direct or through a booking site",
-      "html": "<p>Comparison and booking sites help you see many airlines at once. Booking direct with the airline can make changes and refunds simpler. Whichever you choose, check who you’re paying and whose terms apply. If you want a hotel too, compare against a <a href=\"/package-holidays/\">package</a>.</p>"
+      "html": "<p>Comparison and booking sites help you see many airlines at once. Booking direct with the airline can make changes and refunds simpler. Whichever you choose, check who you’re paying and whose terms apply. If you want a hotel too, compare against a <a href=\"/package-holidays/\">package</a>.</p>\n<p>Online travel agents such as [[link:cj6248437-flights|TravelUp]] show fares from many airlines in one search, which makes it quick to compare dates and routes before you decide where to book.</p>"
     }
   ],
   "faqs": [

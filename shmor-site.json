@@ -108,7 +108,30 @@
       "q": "canary islands holidays"
     }
   ],
-  "offers": [],
+  "offers": [
+    {
+      "title": "Paris holidays: save up to 40%, plus £30 extra with code TU30",
+      "link": "cj6248437-paris",
+      "badge": "Code TU30",
+      "terms": "TravelUp offer for bookings over £599. Listed until 31 Dec 2026; check the full terms on TravelUp before you book.",
+      "pages": [
+        "city-breaks",
+        "blog/christmas-market-city-breaks"
+      ],
+      "expires": "2026-12-31"
+    },
+    {
+      "title": "Gran Canaria hotels: up to £20 extra off with code HOTEL20",
+      "link": "cj6248437-gran-canaria",
+      "badge": "Code HOTEL20",
+      "terms": "TravelUp offer for bookings over £400. Listed until 31 Dec 2026; check the full terms on TravelUp before you book.",
+      "pages": [
+        "destinations/canary-islands",
+        "blog/winter-sun-destinations"
+      ],
+      "expires": "2026-12-31"
+    }
+  ],
   "links": {
     "cj6248437-home": {
       "merchant": "TravelUp",
@@ -134,6 +157,104 @@
       "network": "cj",
       "url": "https://www.tkqlhce.com/click-101926854-15508741?url=https%3A%2F%2Fwww.travelup.com%2Fen-gb%2Fholidays",
       "blurb": "Browse holiday packages at TravelUp. A UK travel agent; prices in £."
+    },
+    "cj6248437-evergreen": {
+      "merchant": "TravelUp",
+      "network": "cj",
+      "url": "https://www.kqzyfj.com/click-101926854-15736463",
+      "blurb": "Flights, hotels and holidays at TravelUp. A UK travel agent; prices in £."
+    },
+    "cj6248437-florida": {
+      "merchant": "TravelUp",
+      "network": "cj",
+      "url": "https://www.jdoqocy.com/click-101926854-15508741?url=https%3A%2F%2Fwww.travelup.com%2Fen-gb%2Fusa%2Fflorida-holidays",
+      "blurb": "Florida holiday packages at TravelUp. A UK travel agent; prices in £."
+    },
+    "cj6248437-gran-canaria": {
+      "merchant": "TravelUp",
+      "network": "cj",
+      "url": "https://www.jdoqocy.com/click-101926854-17277044",
+      "expires": "2026-12-31",
+      "then": "cj6248437-hotels",
+      "blurb": "Gran Canaria hotel deals at TravelUp."
+    },
+    "cj6248437-paris": {
+      "merchant": "TravelUp",
+      "network": "cj",
+      "url": "https://www.tkqlhce.com/click-101926854-15851672",
+      "expires": "2026-12-31",
+      "then": "cj6248437-holidays",
+      "blurb": "Paris holiday deals at TravelUp."
+    },
+    "cj6248437-b-flights-728": {
+      "merchant": "TravelUp",
+      "network": "cj",
+      "url": "https://www.anrdoezrs.net/click-101926854-15444628",
+      "banner": {
+        "src": "https://www.lduhtrp.net/image-101926854-15444628",
+        "width": 728,
+        "height": 90,
+        "alt": "TravelUp: cheap flights to the USA"
+      }
+    },
+    "cj6248437-b-flights-300": {
+      "merchant": "TravelUp",
+      "network": "cj",
+      "url": "https://www.tkqlhce.com/click-101926854-15444626",
+      "banner": {
+        "src": "https://www.lduhtrp.net/image-101926854-15444626",
+        "width": 300,
+        "height": 250,
+        "alt": "TravelUp: cheap flights to the USA"
+      }
+    },
+    "cj6248437-b-hotels-728": {
+      "merchant": "TravelUp",
+      "network": "cj",
+      "url": "https://www.anrdoezrs.net/click-101926854-15363623",
+      "banner": {
+        "src": "https://www.ftjcfx.com/image-101926854-15363623",
+        "width": 728,
+        "height": 90,
+        "alt": "TravelUp hotel deals"
+      }
+    },
+    "cj6248437-b-hotels-300": {
+      "merchant": "TravelUp",
+      "network": "cj",
+      "url": "https://www.dpbolvw.net/click-101926854-15363621",
+      "banner": {
+        "src": "https://www.lduhtrp.net/image-101926854-15363621",
+        "width": 300,
+        "height": 250,
+        "alt": "TravelUp hotel deals"
+      }
+    },
+    "cj6248437-b-holidays-300": {
+      "merchant": "TravelUp",
+      "network": "cj",
+      "url": "https://www.jdoqocy.com/click-101926854-15859871",
+      "expires": "2026-12-31",
+      "then": "cj6248437-holidays",
+      "banner": {
+        "src": "https://www.awltovhc.com/image-101926854-15859871",
+        "width": 300,
+        "height": 250,
+        "alt": "TravelUp holiday deals"
+      }
+    },
+    "cj6248437-b-paris-728": {
+      "merchant": "TravelUp",
+      "network": "cj",
+      "url": "https://www.kqzyfj.com/click-101926854-15859875",
+      "expires": "2026-12-31",
+      "then": "cj6248437-holidays",
+      "banner": {
+        "src": "https://www.ftjcfx.com/image-101926854-15859875",
+        "width": 728,
+        "height": 90,
+        "alt": "TravelUp holiday deals"
+      }
     }
   },
   "seo": {

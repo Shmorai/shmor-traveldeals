@@ -102,5 +102,12 @@
   "partners": [
     "cj6248437-home"
   ],
-  "partnersTitle": "Search and book with our travel partner"
+  "partnersTitle": "Search and book with our travel partner",
+  "blocks": [
+    {
+      "type": "banner",
+      "link": "cj6248437-b-flights-728",
+      "mobile": "cj6248437-b-flights-300"
+    }
+  ]
 }
