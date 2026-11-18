@@ -65,5 +65,8 @@ After changing `shmor-site.json` (links, keywords, card), also run `node tools/s
 
 - **HopeGoo** (CJ advertiser 7728435; added minimally 2026-11-18 at the user's request). Asia-focused (Ly.com/Tongcheng group, Singapore); 1% flights, 5% overseas hotels; cookie only 7 days (app) / 14 days (web). Almost all CJ links are zh/ko/ms; the only English evergreen link is "[EC]Flight- general search page" → `cj7728435-flights` (TravelDeals PID). Placed: one inline link in the winter-sun post's Thailand line + a card on that post. Expand only if Asia destination guides are added.
 
+- **Air India** (CJ advertiser 7008093, joined; added 2026-11-18). 0.75% international fares, $1.30 per India-domestic flight; 45-day cookie; US 69% of conversions. Terms: no brand bidding/brand in our URLs (`cj7008093-*`), CJ images only, programme codes only. Codes for TravelDeals (PID 101926854): homepage `cj7008093-home`; regional offer `cj7008093-intl-offer` (US: USD 12 link 17182752, UK: GBP 9.50 link 17183335, EU: EUR 11 link 17183362; expires 2026-12-30 → home); "Discover the world with Air India" banners 728x98 + 300x250 (self-hosted PNG). Rupee offers not used.
+- Placed: offer card on home + winter-sun post (until 30 Dec), link in cheap-flights "Budget or full-service airline?", banner + link on the UK liquids post. Homepage partner box now has 5 cards (2 rows): consider trimming if more partners are added.
+
 ## Ideas / next
-More travel programmes (Air India is joined in CJ) · Asia destination guides (would justify more HopeGoo) · a social share image (1200×630, set `seo.image`) · more destination pages (Tenerife, Lanzarote, Dubai, Cancún, Greece, Turkey) · US "vacation" pages.
+More travel programmes · Asia destination guides (would justify more HopeGoo) · a social share image (1200×630, set `seo.image`) · more destination pages (Tenerife, Lanzarote, Dubai, Cancún, Greece, Turkey) · US "vacation" pages.

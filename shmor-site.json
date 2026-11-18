@@ -171,6 +171,18 @@
         "",
         "cheap-flights"
       ]
+    },
+    {
+      "title": "Air India international flights: up to USD 12 / GBP 9.50 / EUR 11 off per passenger",
+      "link": "cj7008093-intl-offer",
+      "badge": "Air India offer",
+      "merchant": "Air India",
+      "terms": "Air India’s affiliate offer; the amount depends on your currency. Listed until 30 Dec 2026; check the full terms on Air India before you book.",
+      "pages": [
+        "",
+        "blog/winter-sun-destinations"
+      ],
+      "expires": "2026-12-30"
     }
   ],
   "links": {
@@ -421,6 +433,48 @@
       "network": "cj",
       "url": "https://www.anrdoezrs.net/click-101926854-17366885",
       "blurb": "Search flights, including to Asia, with HopeGoo, an Asia-focused travel booking site; prices in $."
+    },
+    "cj7008093-home": {
+      "merchant": "Air India",
+      "network": "cj",
+      "url": "https://www.dpbolvw.net/click-101926854-17102071",
+      "blurb": "Book flights direct with Air India, India’s flag carrier, from the US, UK, Canada and Europe."
+    },
+    "cj7008093-intl-offer": {
+      "merchant": "Air India",
+      "network": "cj",
+      "url": {
+        "us": "https://www.dpbolvw.net/click-101926854-17182752",
+        "uk": "https://www.jdoqocy.com/click-101926854-17183335",
+        "eu": "https://www.dpbolvw.net/click-101926854-17183362"
+      },
+      "expires": "2026-12-30",
+      "then": "cj7008093-home",
+      "blurb": "Air India international flight discount."
+    },
+    "cj7008093-b-discover-728": {
+      "merchant": "Air India",
+      "network": "cj",
+      "url": "https://www.dpbolvw.net/click-101926854-15773838",
+      "banner": {
+        "src": "/assets/img/partners/cj7008093-b-discover-728.png",
+        "cjSrc": "https://www.tqlkg.com/image-101926854-15773838",
+        "width": 728,
+        "height": 98,
+        "alt": "Discover the world with Air India"
+      }
+    },
+    "cj7008093-b-discover-300": {
+      "merchant": "Air India",
+      "network": "cj",
+      "url": "https://www.dpbolvw.net/click-101926854-15773837",
+      "banner": {
+        "src": "/assets/img/partners/cj7008093-b-discover-300.png",
+        "cjSrc": "https://www.lduhtrp.net/image-101926854-15773837",
+        "width": 300,
+        "height": 250,
+        "alt": "Discover the world with Air India"
+      }
     }
   },
   "seo": {
