@@ -59,5 +59,10 @@
     "family-holidays",
     "package-holidays",
     "blog/winter-sun-destinations"
-  ]
+  ],
+  "partners": [
+    "cj6248437-holidays",
+    "cj6248437-flights"
+  ],
+  "partnersTitle": "Search and book with our travel partner"
 }

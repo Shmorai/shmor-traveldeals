@@ -109,7 +109,33 @@
     }
   ],
   "offers": [],
-  "links": {},
+  "links": {
+    "cj6248437-home": {
+      "merchant": "TravelUp",
+      "network": "cj",
+      "url": "https://www.jdoqocy.com/click-101926854-15508741?url=https%3A%2F%2Fwww.travelup.com%2Fen-gb",
+      "featured": true,
+      "blurb": "Flights, hotels and holiday packages at TravelUp. A UK travel agent; prices in £."
+    },
+    "cj6248437-flights": {
+      "merchant": "TravelUp",
+      "network": "cj",
+      "url": "https://www.jdoqocy.com/click-101926854-15508741?url=https%3A%2F%2Fwww.travelup.com%2Fen-gb%2Fflights",
+      "blurb": "Search and compare flights at TravelUp. A UK travel agent; prices in £."
+    },
+    "cj6248437-hotels": {
+      "merchant": "TravelUp",
+      "network": "cj",
+      "url": "https://www.kqzyfj.com/click-101926854-15508741",
+      "blurb": "Search hotels worldwide at TravelUp. A UK travel agent; prices in £."
+    },
+    "cj6248437-holidays": {
+      "merchant": "TravelUp",
+      "network": "cj",
+      "url": "https://www.tkqlhce.com/click-101926854-15508741?url=https%3A%2F%2Fwww.travelup.com%2Fen-gb%2Fholidays",
+      "blurb": "Browse holiday packages at TravelUp. A UK travel agent; prices in £."
+    }
+  },
   "seo": {
     "siteName": "TravelDeals",
     "description": "Compare holiday deals, cheap flights, hotels and city breaks from trusted travel brands in one place.",

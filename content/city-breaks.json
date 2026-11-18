@@ -59,5 +59,10 @@
     "cheap-flights",
     "last-minute-holidays",
     "blog/christmas-market-city-breaks"
-  ]
+  ],
+  "partners": [
+    "cj6248437-holidays",
+    "cj6248437-flights"
+  ],
+  "partnersTitle": "Search and book with our travel partner"
 }
