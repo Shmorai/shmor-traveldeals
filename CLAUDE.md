@@ -63,5 +63,7 @@ After changing `shmor-site.json` (links, keywords, card), also run `node tools/s
 - **Oojo** (CJ advertiser 6868393, joined; added 2026-11-18). Online flight booking (Traveltech SIA, Latvia; serves US/UK/CA/DE). $15 per booking not cancelled within the month; 45-day cookie; no brand bidding; programme/public codes allowed. Codes for TravelDeals (PID 101926854): `cj6868393-newuser` (US/CAN link 15789169, UK link 15789174 → oojo.com/en-GB), generic, concierge, Italy banner 350x250 (self-hosted). Not used: "Rated 4.8/5" text (unverifiable rating), Black Friday and tall banners.
 - Placed: "$50 off your first flight booking" offer card (home, cheap-flights), Italy banner + link + card on /destinations/, links on family-holidays and city-breaks.
 
+- **HopeGoo** (CJ advertiser 7728435; added minimally 2026-11-18 at the user's request). Asia-focused (Ly.com/Tongcheng group, Singapore); 1% flights, 5% overseas hotels; cookie only 7 days (app) / 14 days (web). Almost all CJ links are zh/ko/ms; the only English evergreen link is "[EC]Flight- general search page" → `cj7728435-flights` (TravelDeals PID). Placed: one inline link in the winter-sun post's Thailand line + a card on that post. Expand only if Asia destination guides are added.
+
 ## Ideas / next
-More travel programmes (HopeGoo, Air India are joined in CJ) · a social share image (1200×630, set `seo.image`) · more destination pages (Tenerife, Lanzarote, Dubai, Cancún, Greece, Turkey) · US "vacation" pages.
+More travel programmes (Air India is joined in CJ) · Asia destination guides (would justify more HopeGoo) · a social share image (1200×630, set `seo.image`) · more destination pages (Tenerife, Lanzarote, Dubai, Cancún, Greece, Turkey) · US "vacation" pages.
