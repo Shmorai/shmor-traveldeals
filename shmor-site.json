@@ -183,6 +183,17 @@
         "blog/winter-sun-destinations"
       ],
       "expires": "2026-12-30"
+    },
+    {
+      "title": "Business and first class flights: extra $40 off with code BC40",
+      "link": "cj7226122-40off",
+      "badge": "Arangrant code",
+      "merchant": "Arangrant",
+      "terms": "Arangrant’s affiliate programme code. Listed until 30 Dec 2026; check the full terms with Arangrant before you book.",
+      "pages": [
+        "cheap-flights"
+      ],
+      "expires": "2026-12-30"
     }
   ],
   "links": {
@@ -474,6 +485,48 @@
         "width": 300,
         "height": 250,
         "alt": "Discover the world with Air India"
+      }
+    },
+    "cj7226122-home": {
+      "merchant": "Arangrant",
+      "network": "cj",
+      "url": "https://www.anrdoezrs.net/click-101926854-17037905",
+      "blurb": "Arangrant finds discounted business and first class fares; tell it your trip and an agent sends options."
+    },
+    "cj7226122-40off": {
+      "merchant": "Arangrant",
+      "network": "cj",
+      "url": "https://www.tkqlhce.com/click-101926854-17039669",
+      "expires": "2026-12-30",
+      "then": "cj7226122-home",
+      "blurb": "Arangrant: instant $40 off business class air tickets (Arangrant’s offer, listed until 30 Dec 2026)."
+    },
+    "cj7226122-b-728": {
+      "merchant": "Arangrant",
+      "network": "cj",
+      "url": "https://www.jdoqocy.com/click-101926854-17038257",
+      "expires": "2026-12-30",
+      "then": "cj7226122-home",
+      "banner": {
+        "src": "/assets/img/partners/cj7226122-b-728.png",
+        "cjSrc": "https://www.tqlkg.com/image-101926854-17038257",
+        "width": 728,
+        "height": 90,
+        "alt": "Arangrant: business and first class flights worldwide, extra $40 off with code BC40"
+      }
+    },
+    "cj7226122-b-300": {
+      "merchant": "Arangrant",
+      "network": "cj",
+      "url": "https://www.anrdoezrs.net/click-101926854-17038278",
+      "expires": "2026-12-30",
+      "then": "cj7226122-home",
+      "banner": {
+        "src": "/assets/img/partners/cj7226122-b-300.png",
+        "cjSrc": "https://www.awltovhc.com/image-101926854-17038278",
+        "width": 300,
+        "height": 250,
+        "alt": "Arangrant: business and first class flights worldwide, extra $40 off with code BC40"
       }
     }
   },
