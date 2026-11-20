@@ -1,0 +1,72 @@
+{
+  "title": "Passport Validity for Europe: The 3-Month, 10-Year Rule",
+  "description": "Is your passport valid for Europe? GOV.UK says it must be under 10 years old on arrival and have 3 months left on departure. How to check before you book.",
+  "h1": "Passport validity for Europe: the 10-year and 3-month rules, and how to check yours",
+  "eyebrow": "Travel documents · Europe",
+  "intro": "Many UK travellers have been caught out at the airport by a passport that looks in date but is not valid for Europe. Before you book flights or a holiday, a two-minute check of the issue and expiry dates can save a refused boarding. Here is what GOV.UK says, in plain English.",
+  "image": {
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ac/20181014_athens_airport_passport_control.jpg/1920px-20181014_athens_airport_passport_control.jpg",
+    "alt": "Passport control desks in an airport arrivals hall",
+    "credit": "Rakoon / CC0",
+    "creditUrl": "https://commons.wikimedia.org/wiki/File:20181014_athens_airport_passport_control.jpg"
+  },
+  "keywords": [
+    "passport validity europe",
+    "passport 3 months validity europe",
+    "10 year passport rule europe",
+    "passport rules for spain",
+    "uk passport valid for schengen",
+    "how old can my passport be to travel to europe",
+    "passport expiry date europe holiday",
+    "schengen 90 180 day rule uk",
+    "renew passport before holiday",
+    "passport issued before october 2018 europe"
+  ],
+  "cardText": "The 10-year issue date and 3-month expiry rules for UK passports travelling to Europe, and a simple way to check yours.",
+  "sections": [
+    {
+      "h2": "What are the passport validity rules for Europe?",
+      "html": "<p>For most European holidays, GOV.UK's travel advice for Schengen countries (Spain is a typical example) sets two conditions for a UK passport. First, the passport must have a date of issue <strong>less than 10 years before the day you arrive</strong>. Second, it must have an expiry date <strong>at least 3 months after the day you plan to leave</strong> the Schengen area. Both tests must be passed, not just one.</p><p>The catch is that the 10-year test looks at the issue date, not the expiry date. GOV.UK points out that the expiry date does not need to fall within 10 years of the issue date, which is why some passports look valid for months or years yet still fail.</p>"
+    },
+    {
+      "h2": "Why can a passport that has not expired still fail?",
+      "html": "<p>Some older UK passports were issued with more than 10 years of validity. GOV.UK warns that if you renewed before 1 October 2018, the issue date may be more than 10 years old on the day you arrive, which would make the passport invalid for Schengen entry even though the expiry date is still ahead.</p><p>To check, look at the \"date of issue\" printed in your passport and compare it with your arrival date, then look at the \"date of expiry\" and compare it with your planned departure date plus three months. Do this for every traveller on the booking, including children.</p>"
+    },
+    {
+      "h2": "How much passport time do you need for a trip?",
+      "html": "<p>Count three months from the day you <em>leave</em>, not the day you arrive. A one-week trip leaving in mid-June needs a passport valid until at least mid-September. If you are visiting more than one country, use the date you leave the Schengen area. Rules for destinations outside the Schengen area differ, so check each country's entry requirements on GOV.UK's foreign travel advice before you book.</p><p>Looking for a good-value trip once your passport is sorted? Compare on our <a href=\"/cheap-flights/\">cheap flights</a> and <a href=\"/package-holidays/\">package holidays</a> pages, and use [[link:cj6248437-holidays|TravelUp's holiday search]] if you want to see packages from a partner agent.</p>"
+    },
+    {
+      "h2": "The 90 in 180 day rule",
+      "html": "<p>Passport validity is only part of the picture. GOV.UK says UK citizens can travel to the Schengen area without a visa for up to <strong>90 days in any 180-day period</strong>, and that earlier visits in the 180 days before you travel count towards your 90. Time spent in a country on a residence permit or long-stay visa does not count. GOV.UK warns that overstaying can lead to a ban from Schengen countries of up to 3 years. See our guide to the <a href=\"/blog/ees-etias-europe-entry-rules/\">EES and ETIAS</a> for how entry checks are changing.</p>"
+    },
+    {
+      "h2": "What to do if your passport does not meet the rules",
+      "html": "<p>If your passport fails either test, GOV.UK's advice is to renew it. Apply well before you travel, because standard processing times vary and a last-minute upgrade may not be available. Check the current timings and fees on GOV.UK when you apply, and consider delaying non-refundable bookings until your new passport arrives. Our guide to <a href=\"/blog/protect-your-holiday-booking-atol-abta-credit-card/\">protecting your holiday booking</a> explains how booking type affects what happens if plans change.</p><p>Also ask your airline or travel provider to confirm that your passport and other documents meet their requirements. Airlines can refuse to carry passengers who do not meet entry rules.</p>[[button:cj6248437-flights|Compare flights]]"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Does my passport need 6 months validity for Europe?",
+      "a": "For Schengen countries, GOV.UK says the passport needs an expiry date at least 3 months after the day you plan to leave, plus an issue date less than 10 years before you arrive. Other countries set their own rules, so check each destination on GOV.UK."
+    },
+    {
+      "q": "Can I travel to Europe on a passport issued more than 10 years ago?",
+      "a": "Not to the Schengen area. GOV.UK says the date of issue must be less than 10 years before the day you arrive, even if the expiry date has not passed."
+    },
+    {
+      "q": "Does the 3 months count from arrival or departure?",
+      "a": "From departure. GOV.UK says the expiry date must be at least 3 months after the day you plan to leave the Schengen area."
+    }
+  ],
+  "sources": [
+    {
+      "title": "GOV.UK: Spain travel advice, entry requirements (passport validity and the 90/180-day rule)",
+      "url": "https://www.gov.uk/foreign-travel-advice/spain/entry-requirements"
+    }
+  ],
+  "updated": "2026-11-20",
+  "date": "2026-11-20",
+  "slug": "blog/passport-validity-europe-10-year-3-month-rule",
+  "type": "post"
+}
