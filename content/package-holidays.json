@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-13",
+  "updated": "2026-11-25",
   "slug": "package-holidays",
   "title": "Package Holidays: Compare Flight + Hotel Deals",
   "description": "Compare package holiday deals with flights, hotels and transfers together. How packages work, the protection they can offer, and when they save money.",
@@ -35,6 +35,10 @@
     {
       "h2": "What to check before booking",
       "html": "<ul><li>Flight times, airline and luggage allowance</li><li>Transfer length and type (shared or private)</li><li>Board basis and what it covers</li><li>Payment schedule, deposit and cancellation terms</li><li>Financial protection details</li></ul>\n<p>Ready to compare? Browse [[link:cj6248437-holidays|holiday packages at TravelUp]], then check the ATOL and cancellation details on the booking page before you pay.</p>"
+    },
+    {
+      "h2": "Price rises and cancellations: what UK package rules say",
+      "html": "<p>Under the UK Package Travel and Linked Travel Arrangements Regulations 2018, as summarised in <a href=\"https://www.gov.uk/government/publications/package-holiday-refunds-and-cancellations/information-about-package-holiday-refunds-and-cancellations\" rel=\"noopener\">GOV.UK guidance</a> (as of November 2026), a provider can only raise the price if your contract allows it, for specific cost rises such as fuel, taxes or exchange rates, and must tell you in writing at least 20 days before departure. If the increase is more than 8%, you must be offered a fee-free refund. If the organiser cancels, you are entitled to a full refund, and you don't have to accept a credit note. Rules differ outside the UK, so check your booking terms.</p>"
     }
   ],
   "faqs": [
@@ -49,6 +53,14 @@
     {
       "q": "Can I pay for a package holiday with a deposit?",
       "a": "Many providers offer low-deposit options, with the balance due some weeks before departure. Check the payment schedule and cancellation terms first."
+    },
+    {
+      "q": "Can a tour operator increase the price of my package holiday after I book?",
+      "a": "Only if your contract allows it and only for specific costs such as fuel, taxes or exchange rates. GOV.UK says the provider must give written notice at least 20 days before departure, and if the rise is over 8% you must be offered a full fee-free refund (UK rules, as of November 2026)."
+    },
+    {
+      "q": "Do I have to accept a credit note if my package holiday is cancelled?",
+      "a": "No. GOV.UK says that if the organiser cancels, you are entitled to a full refund within 14 days and don't have to accept a refund credit note or rebook."
     }
   ],
   "related": [
