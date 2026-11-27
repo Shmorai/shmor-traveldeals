@@ -68,5 +68,8 @@
   "updated": "2026-11-20",
   "date": "2026-11-20",
   "slug": "blog/passport-validity-europe-10-year-3-month-rule",
-  "type": "post"
+  "type": "post",
+  "related": [
+    "blog/ghic-uk-global-health-insurance-card-what-it-covers"
+  ]
 }

@@ -1,0 +1,76 @@
+{
+  "date": "2026-11-27",
+  "updated": "2026-11-27",
+  "slug": "blog/ghic-uk-global-health-insurance-card-what-it-covers",
+  "type": "post",
+  "title": "GHIC Card Explained: What It Covers Abroad and What It Doesn’t",
+  "description": "What the UK GHIC card covers in Europe, where it is valid, what it excludes and how to apply free. Plus why you still need travel insurance.",
+  "h1": "GHIC card explained: what it covers abroad and what it doesn’t",
+  "eyebrow": "Travel health · Before you go",
+  "intro": "The UK Global Health Insurance Card (GHIC) can save you money if you need state healthcare on holiday in Europe, but it is not travel insurance. Here is what the NHS says it covers, where it works, and how to get one without paying a fee, as of November 2026.",
+  "keywords": [
+    "ghic card",
+    "ghic card europe",
+    "ghic vs travel insurance",
+    "what does ghic cover",
+    "apply for ghic",
+    "ghic card free",
+    "global health insurance card uk",
+    "ghic expiry",
+    "ghic countries",
+    "do i need travel insurance with ghic"
+  ],
+  "cardText": "What the free UK GHIC covers in Europe, what it leaves out, and how to apply on the official NHS site.",
+  "sections": [
+    {
+      "h2": "What is the GHIC card?",
+      "html": "<p>The GHIC is a free UK card that gives you access to <strong>necessary state healthcare</strong> in the EEA and some other countries, on the same terms as local residents. Depending on the country, that can mean free care or a payment similar to what a local would pay. It lasts up to five years, and you can apply up to nine months before your current card expires. Every family member needs their own card.</p>"
+    },
+    {
+      "h2": "What does the GHIC cover?",
+      "html": "<p>According to the NHS, it covers:</p><ul><li>Emergency treatment and A&amp;E care.</li><li>Treatment for long-term or pre-existing conditions (some treatments, such as dialysis or chemotherapy, should be arranged with the provider in advance).</li><li>Routine maternity care, except giving birth abroad.</li></ul><p>It only applies to <strong>state</strong> healthcare, so the care you get is whatever that country’s public system provides.</p>"
+    },
+    {
+      "h2": "What the GHIC does not cover",
+      "html": "<p>The NHS is clear that the card does not cover <strong>medical repatriation</strong> (being flown home), <strong>treatment in private facilities</strong>, or <strong>ski and mountain rescue</strong>. It is not a substitute for travel and medical insurance, which the NHS recommends for your whole trip. If you are booking a holiday through one of our <a href=\"/package-holidays/\">package holiday</a> or <a href=\"/all-inclusive-holidays/\">all-inclusive</a> pages, check the insurance you hold alongside the card before you travel.</p>"
+    },
+    {
+      "h2": "Which countries accept the GHIC?",
+      "html": "<p>The NHS lists the EEA countries, Montenegro, Australia, Jersey, Guernsey, the Isle of Man, and St Helena, Tristan and Ascension. Switzerland is covered only for certain nationalities and statuses. Coverage in other countries is still being negotiated, so check the NHS page for your destination close to departure. Popular non-listed destinations are not covered, so do not assume the card works everywhere.</p>"
+    },
+    {
+      "h2": "How to apply for a GHIC (and avoid paid sites)",
+      "html": "<p>Apply only through the official NHS route, where the card is free. You need your full name, address, date of birth and National Insurance number (plus a Health and Care number if you are from Northern Ireland), and you must be ordinarily and legally resident in the UK. The NHS says you will usually get an email decision within 24 hours (check your junk folder), and approved cards arrive by post within 15 working days. The NHS warns that unofficial sites may charge a fee, so avoid them.</p><p>If your card has not arrived or you do not have it abroad, you can apply for a Provisional Replacement Certificate (PRC) for emergency cover. Apply early if you are travelling on a <a href=\"/last-minute-holidays/\">last-minute holiday</a>.</p>"
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Is the GHIC card free?",
+      "a": "Yes. The NHS says the GHIC is free, lasts up to 5 years, and should only be applied for through the official NHS route. Unofficial sites may charge a fee."
+    },
+    {
+      "q": "Does the GHIC replace travel insurance?",
+      "a": "No. It does not cover medical repatriation, private treatment or ski and mountain rescue, and the NHS recommends travel and medical insurance for your whole trip."
+    },
+    {
+      "q": "Is the GHIC valid in the USA or Turkey?",
+      "a": "The NHS list of valid countries covers the EEA and a short list of other places, and does not include the USA. Check the NHS page for the latest list for any destination before you travel."
+    }
+  ],
+  "related": [
+    "package-holidays",
+    "last-minute-holidays"
+  ],
+  "sources": [
+    {
+      "title": "NHS: Apply for a free UK Global Health Insurance Card (GHIC)",
+      "url": "https://www.nhs.uk/using-the-nhs/healthcare-abroad/apply-for-a-free-uk-global-health-insurance-card-ghic/"
+    }
+  ],
+  "image": {
+    "src": "https://images.unsplash.com/photo-1497302347632-904729bc24aa",
+    "alt": "Travel map, passport and notebook laid out for trip planning",
+    "credit": "John Matychuk",
+    "creditUrl": "https://unsplash.com/@john_matychuk"
+  }
+}
